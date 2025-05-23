@@ -39,13 +39,15 @@
             dgvDocumentos = new DataGridView();
             openFileDialog1 = new OpenFileDialog();
             lblDocumentos = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvDocumentos).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lblArquivo
             // 
             lblArquivo.AutoSize = true;
-            lblArquivo.Location = new Point(32, 127);
+            lblArquivo.Location = new Point(604, 28);
             lblArquivo.Name = "lblArquivo";
             lblArquivo.Size = new Size(49, 15);
             lblArquivo.TabIndex = 0;
@@ -54,7 +56,7 @@
             // lblTipoDoc
             // 
             lblTipoDoc.AutoSize = true;
-            lblTipoDoc.Location = new Point(32, 83);
+            lblTipoDoc.Location = new Point(304, 27);
             lblTipoDoc.Name = "lblTipoDoc";
             lblTipoDoc.Size = new Size(60, 15);
             lblTipoDoc.TabIndex = 1;
@@ -63,7 +65,7 @@
             // lblCandidato
             // 
             lblCandidato.AutoSize = true;
-            lblCandidato.Location = new Point(32, 36);
+            lblCandidato.Location = new Point(6, 27);
             lblCandidato.Name = "lblCandidato";
             lblCandidato.Size = new Size(65, 15);
             lblCandidato.TabIndex = 2;
@@ -71,31 +73,31 @@
             // 
             // txtArquivo
             // 
-            txtArquivo.Location = new Point(103, 124);
+            txtArquivo.Location = new Point(604, 46);
             txtArquivo.Name = "txtArquivo";
-            txtArquivo.Size = new Size(184, 23);
+            txtArquivo.Size = new Size(316, 23);
             txtArquivo.TabIndex = 3;
             // 
             // txtTipo
             // 
-            txtTipo.Location = new Point(103, 80);
+            txtTipo.Location = new Point(304, 45);
             txtTipo.Name = "txtTipo";
-            txtTipo.Size = new Size(265, 23);
+            txtTipo.Size = new Size(294, 23);
             txtTipo.TabIndex = 4;
             // 
             // cmbCandidato
             // 
             cmbCandidato.FormattingEnabled = true;
             cmbCandidato.Items.AddRange(new object[] { "Nome" });
-            cmbCandidato.Location = new Point(103, 33);
+            cmbCandidato.Location = new Point(6, 45);
             cmbCandidato.Name = "cmbCandidato";
-            cmbCandidato.Size = new Size(265, 23);
+            cmbCandidato.Size = new Size(292, 23);
             cmbCandidato.TabIndex = 5;
             cmbCandidato.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btnUpload
             // 
-            btnUpload.Location = new Point(32, 171);
+            btnUpload.Location = new Point(1007, 45);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(75, 23);
             btnUpload.TabIndex = 6;
@@ -104,7 +106,7 @@
             // 
             // btnSelecionarArquivo
             // 
-            btnSelecionarArquivo.Location = new Point(293, 124);
+            btnSelecionarArquivo.Location = new Point(926, 45);
             btnSelecionarArquivo.Name = "btnSelecionarArquivo";
             btnSelecionarArquivo.Size = new Size(75, 23);
             btnSelecionarArquivo.TabIndex = 7;
@@ -114,9 +116,9 @@
             // dgvDocumentos
             // 
             dgvDocumentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDocumentos.Location = new Point(12, 230);
+            dgvDocumentos.Location = new Point(6, 101);
             dgvDocumentos.Name = "dgvDocumentos";
-            dgvDocumentos.Size = new Size(376, 208);
+            dgvDocumentos.Size = new Size(1076, 319);
             dgvDocumentos.TabIndex = 8;
             // 
             // openFileDialog1
@@ -126,33 +128,43 @@
             // lblDocumentos
             // 
             lblDocumentos.AutoSize = true;
-            lblDocumentos.Location = new Point(12, 212);
+            lblDocumentos.Location = new Point(6, 83);
             lblDocumentos.Name = "lblDocumentos";
             lblDocumentos.Size = new Size(75, 15);
             lblDocumentos.TabIndex = 9;
             lblDocumentos.Text = "Documentos";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtTipo);
+            groupBox1.Controls.Add(lblDocumentos);
+            groupBox1.Controls.Add(lblArquivo);
+            groupBox1.Controls.Add(dgvDocumentos);
+            groupBox1.Controls.Add(lblTipoDoc);
+            groupBox1.Controls.Add(btnSelecionarArquivo);
+            groupBox1.Controls.Add(lblCandidato);
+            groupBox1.Controls.Add(btnUpload);
+            groupBox1.Controls.Add(txtArquivo);
+            groupBox1.Controls.Add(cmbCandidato);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1088, 426);
+            groupBox1.TabIndex = 10;
+            groupBox1.TabStop = false;
+            // 
             // frmUploadDocumentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(400, 450);
-            Controls.Add(lblDocumentos);
-            Controls.Add(dgvDocumentos);
-            Controls.Add(btnSelecionarArquivo);
-            Controls.Add(btnUpload);
-            Controls.Add(cmbCandidato);
-            Controls.Add(txtTipo);
-            Controls.Add(txtArquivo);
-            Controls.Add(lblCandidato);
-            Controls.Add(lblTipoDoc);
-            Controls.Add(lblArquivo);
+            ClientSize = new Size(1112, 450);
+            Controls.Add(groupBox1);
             Name = "frmUploadDocumentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela de Upload de Documentos";
             ((System.ComponentModel.ISupportInitialize)dgvDocumentos).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -168,5 +180,6 @@
         private DataGridView dgvDocumentos;
         private OpenFileDialog openFileDialog1;
         private Label lblDocumentos;
+        private GroupBox groupBox1;
     }
 }

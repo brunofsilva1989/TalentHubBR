@@ -41,13 +41,15 @@
             btnExcluir = new Button();
             dgvVagas = new DataGridView();
             lblVagas = new Label();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvVagas).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(38, 63);
+            lblDescricao.Location = new Point(6, 47);
             lblDescricao.Name = "lblDescricao";
             lblDescricao.Size = new Size(58, 15);
             lblDescricao.TabIndex = 0;
@@ -56,7 +58,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(38, 104);
+            label2.Location = new Point(270, 47);
             label2.Name = "label2";
             label2.Size = new Size(45, 15);
             label2.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(38, 143);
+            label3.Location = new Point(526, 47);
             label3.Name = "label3";
             label3.Size = new Size(39, 15);
             label3.TabIndex = 2;
@@ -74,7 +76,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(38, 184);
+            label4.Location = new Point(793, 47);
             label4.Name = "label4";
             label4.Size = new Size(52, 15);
             label4.TabIndex = 3;
@@ -82,14 +84,14 @@
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(118, 63);
+            txtDescricao.Location = new Point(15, 65);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(249, 23);
             txtDescricao.TabIndex = 4;
             // 
             // txtEscopo
             // 
-            txtEscopo.Location = new Point(118, 101);
+            txtEscopo.Location = new Point(270, 65);
             txtEscopo.Name = "txtEscopo";
             txtEscopo.Size = new Size(249, 23);
             txtEscopo.TabIndex = 5;
@@ -97,22 +99,22 @@
             // cmbStatus
             // 
             cmbStatus.FormattingEnabled = true;
-            cmbStatus.Location = new Point(118, 140);
+            cmbStatus.Location = new Point(526, 65);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(249, 23);
+            cmbStatus.Size = new Size(261, 23);
             cmbStatus.TabIndex = 6;
             // 
             // cmbEmpresa
             // 
             cmbEmpresa.FormattingEnabled = true;
-            cmbEmpresa.Location = new Point(118, 181);
+            cmbEmpresa.Location = new Point(793, 65);
             cmbEmpresa.Name = "cmbEmpresa";
-            cmbEmpresa.Size = new Size(249, 23);
+            cmbEmpresa.Size = new Size(291, 23);
             cmbEmpresa.TabIndex = 7;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(38, 231);
+            btnSalvar.Location = new Point(312, 409);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(75, 23);
             btnSalvar.TabIndex = 8;
@@ -121,7 +123,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(134, 231);
+            btnEditar.Location = new Point(490, 409);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 9;
@@ -130,7 +132,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(230, 231);
+            btnExcluir.Location = new Point(664, 409);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(75, 23);
             btnExcluir.TabIndex = 10;
@@ -140,44 +142,54 @@
             // dgvVagas
             // 
             dgvVagas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVagas.Location = new Point(393, 36);
+            dgvVagas.Location = new Point(6, 123);
             dgvVagas.Name = "dgvVagas";
-            dgvVagas.Size = new Size(395, 227);
+            dgvVagas.Size = new Size(1078, 280);
             dgvVagas.TabIndex = 11;
             // 
             // lblVagas
             // 
             lblVagas.AutoSize = true;
-            lblVagas.Location = new Point(393, 18);
+            lblVagas.Location = new Point(6, 105);
             lblVagas.Name = "lblVagas";
             lblVagas.Size = new Size(37, 15);
             lblVagas.TabIndex = 12;
             lblVagas.Text = "Vagas";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblDescricao);
+            groupBox1.Controls.Add(dgvVagas);
+            groupBox1.Controls.Add(lblVagas);
+            groupBox1.Controls.Add(txtDescricao);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(btnSalvar);
+            groupBox1.Controls.Add(btnExcluir);
+            groupBox1.Controls.Add(txtEscopo);
+            groupBox1.Controls.Add(btnEditar);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(cmbStatus);
+            groupBox1.Controls.Add(cmbEmpresa);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1090, 442);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            // 
             // frmCadastroVaga
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 282);
-            Controls.Add(lblVagas);
-            Controls.Add(dgvVagas);
-            Controls.Add(btnExcluir);
-            Controls.Add(btnEditar);
-            Controls.Add(btnSalvar);
-            Controls.Add(cmbEmpresa);
-            Controls.Add(cmbStatus);
-            Controls.Add(txtEscopo);
-            Controls.Add(txtDescricao);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(lblDescricao);
+            ClientSize = new Size(1114, 466);
+            Controls.Add(groupBox1);
             Name = "frmCadastroVaga";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Cadastro de Vaga";
             ((System.ComponentModel.ISupportInitialize)dgvVagas).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -195,5 +207,6 @@
         private Button btnExcluir;
         private DataGridView dgvVagas;
         private Label lblVagas;
+        private GroupBox groupBox1;
     }
 }

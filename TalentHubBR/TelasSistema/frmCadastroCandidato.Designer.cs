@@ -398,7 +398,6 @@
             grpFormCandidato.Size = new Size(1109, 318);
             grpFormCandidato.TabIndex = 33;
             grpFormCandidato.TabStop = false;
-            grpFormCandidato.Text = "groupBox1";
             // 
             // lblSecaoEleitor
             // 
