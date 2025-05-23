@@ -104,6 +104,7 @@
             aToolStripMenuItem.Name = "aToolStripMenuItem";
             aToolStripMenuItem.Size = new Size(50, 20);
             aToolStripMenuItem.Text = "Ajuda";
+            aToolStripMenuItem.Click += aToolStripMenuItem_Click;
             // 
             // Form1
             // 

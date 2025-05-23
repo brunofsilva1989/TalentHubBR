@@ -50,7 +50,7 @@ namespace TalentHubBR.UI
 
         private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRelatorios form = new frmRelatorios();
+            a form = new a();
             form.ShowDialog();
         }
 
@@ -59,7 +59,13 @@ namespace TalentHubBR.UI
             frmBancoTalentos form = new frmBancoTalentos();
             form.ShowDialog();
         }
+
+        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAjuda form = new frmAjuda();
+            form.ShowDialog();
+        }
     }
-      
+
 }
 

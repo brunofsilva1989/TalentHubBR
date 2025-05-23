@@ -5,10 +5,16 @@ namespace TalentHub.DAL
 {
     public class TalentHubContext : DbContext
     {
+
+        #region Construtores
         public TalentHubContext(DbContextOptions<TalentHubContext> options) : base(options)
         {
 
         }
+       
+        public TalentHubContext() {}
+        #endregion
+
 
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Vaga> Vagas { get; set; }
@@ -54,14 +60,30 @@ namespace TalentHub.DAL
             //Configuração da entidade Candidato
             modelBuilder.Entity<Candidato>(builder =>
             {
-                builder.HasKey(c => c.Id); // Define a chave primária
-                builder.Property(c => c.Nome).IsRequired().HasMaxLength(150); // Define o nome como obrigatório e com tamanho máximo
-                builder.Property(c => c.Email).HasMaxLength(100); // Define o email com tamanho máximo
-                builder.Property(c => c.Telefone).HasMaxLength(20); // Define o telefone com tamanho máximo
-                builder.Property(c => c.Endereco).HasMaxLength(250); // Define o endereço com tamanho máximo
-                builder.Property(c => c.Escolaridade).HasMaxLength(100); // Define a escolaridade com tamanho máximo
-                builder.Property(c => c.ExperienciaProfissional).HasMaxLength(500); // Define a experiência profissional com tamanho máximo
-                builder.Property(c => c.Habilidades).HasMaxLength(500); // Define as habilidades com tamanho máximo
+                builder.HasKey(c => c.Id); 
+                builder.Property(c => c.Nome).IsRequired().HasMaxLength(150); 
+                builder.Property(c => c.DataNascimento).IsRequired(); 
+                builder.Property(c => c.Bairro).HasMaxLength(100); 
+                builder.Property(c => c.Cep).HasMaxLength(10); 
+                builder.Property(c => c.Cidade).HasMaxLength(100); 
+                builder.Property(c => c.EstadoCivil).HasMaxLength(50);
+                builder.Property(c => c.CidadeNatal).HasMaxLength(100); 
+                builder.Property(c => c.Nacionalidade).HasMaxLength(100); 
+                builder.Property(c => c.CpfCnpj).IsRequired().HasMaxLength(14); 
+                builder.Property(c => c.Rg).IsRequired().HasMaxLength(20); 
+                builder.Property(c => c.OrgaoEmissor).HasMaxLength(50); 
+                builder.Property(c => c.NomeDaMae).HasMaxLength(150); 
+                builder.Property(c => c.NumeroCTPS).HasMaxLength(20); 
+                builder.Property(c => c.SerieCTPS).HasMaxLength(10); 
+                builder.Property(c => c.NumeroTituloEleitor).HasMaxLength(20); 
+                builder.Property(c => c.ZonaTituloEleitor).HasMaxLength(10); 
+                builder.Property(c => c.SecaoTituloEleitor).HasMaxLength(10); 
+                builder.Property(c => c.Email).HasMaxLength(100); 
+                builder.Property(c => c.Telefone).HasMaxLength(20); 
+                builder.Property(c => c.Endereco).HasMaxLength(250); 
+                builder.Property(c => c.Escolaridade).HasMaxLength(100); 
+                builder.Property(c => c.ExperienciaProfissional).HasMaxLength(500); 
+                builder.Property(c => c.Habilidades).HasMaxLength(500); 
                 builder.Property(c => c.Status).HasConversion<string>();
 
                 builder.HasMany(c => c.Documentos)
@@ -71,6 +93,10 @@ namespace TalentHub.DAL
                 builder.HasMany(c => c.Relatorios)
                     .WithOne(r => r.Candidato)
                     .HasForeignKey(r => r.CandidatoId);
+
+                builder.HasMany(c => c.Feedbacks)
+                    .WithOne(f => f.Candidato)
+                    .HasForeignKey(f => f.CandidatoId);
             });
 
             //Configuração da entidade Documento
@@ -117,7 +143,11 @@ namespace TalentHub.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DEVBRUNO;Database=TalentHubDB;User Id=sa;Password=Bru@1989;TrustServerCertificate=True;");
+
+            if(!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer("Server=DEVBRUNO;Database=TalentHubDB;User Id=sa;Password=Bru@1989;TrustServerCertificate=True;");
+
+
         }
     }
         

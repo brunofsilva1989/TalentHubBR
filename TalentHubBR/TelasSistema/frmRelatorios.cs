@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TalentHubBR.UI.TelasSistema
 {
-    public partial class frmRelatorios : Form
+    public partial class a : Form
     {
-        public frmRelatorios()
+        public a()
         {
             InitializeComponent();
         }
