@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TalentHub.DAL;
 
@@ -11,9 +12,11 @@ using TalentHub.DAL;
 namespace TalentHub.DAL.Migrations
 {
     [DbContext(typeof(TalentHubContext))]
-    partial class TalentHubContextModelSnapshot : ModelSnapshot
+    [Migration("20250524033858_NovosCamposCandidato")]
+    partial class NovosCamposCandidato
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -305,15 +308,7 @@ namespace TalentHub.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Cargo")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<DateTime>("DataAbertura")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DataExpiracao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -324,17 +319,15 @@ namespace TalentHub.DAL.Migrations
                     b.Property<int>("EmpresaId")
                         .HasColumnType("int");
 
-                    b.Property<string>("EscopoVaga")
+                    b.Property<string>("Escopo")
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<decimal>("Salario")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Status")
+                    b.Property<string>("Status")
+                        .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TalentHub.DAL;
 
@@ -11,9 +12,11 @@ using TalentHub.DAL;
 namespace TalentHub.DAL.Migrations
 {
     [DbContext(typeof(TalentHubContext))]
-    partial class TalentHubContextModelSnapshot : ModelSnapshot
+    [Migration("20250524185502_CriandoEnumStatusVaga")]
+    partial class CriandoEnumStatusVaga
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

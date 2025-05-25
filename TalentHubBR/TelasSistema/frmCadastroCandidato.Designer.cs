@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblNome = new Label();
             lblEmail = new Label();
             lblTelefone = new Label();
@@ -42,24 +43,27 @@
             txtTelefone = new TextBox();
             dateDataNascimento = new DateTimePicker();
             cmbStatus = new ComboBox();
+            boEmpresaServiceBindingSource1 = new BindingSource(components);
             dataGridView1 = new DataGridView();
             btnSalvar = new Button();
             btnEditar = new Button();
             btnExcluir = new Button();
-            txtExperienciaProfissional = new TextBox();
             lblStatus = new Label();
             lblHabilidades = new Label();
-            txtEscolaridade = new TextBox();
             dtgCandidatos = new Label();
             lblBairro = new Label();
             lblCep = new Label();
             lblCidade = new Label();
-            lblEstadoCivil = new Label();
+            lblUf = new Label();
             txtBairro = new TextBox();
             txtCep = new TextBox();
             txtCidade = new TextBox();
-            txtEstado = new TextBox();
             grpFormCandidato = new GroupBox();
+            label2 = new Label();
+            cmbEstadoCivil = new ComboBox();
+            cmbExperiencia = new ComboBox();
+            cmbEscolaridade = new ComboBox();
+            cmbUF = new ComboBox();
             lblSecaoEleitor = new Label();
             txtSecaoTituloEleitor = new TextBox();
             lblZonaEleitor = new Label();
@@ -82,8 +86,12 @@
             label1 = new Label();
             txtCidadeNatal = new TextBox();
             lblCidadeNatal = new Label();
+            boEmpresaServiceBindingSource = new BindingSource(components);
+            btnNovo = new Button();
+            ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grpFormCandidato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lblNome
@@ -125,7 +133,7 @@
             // lblDataNascimento
             // 
             lblDataNascimento.AutoSize = true;
-            lblDataNascimento.Location = new Point(379, 174);
+            lblDataNascimento.Location = new Point(631, 174);
             lblDataNascimento.Name = "lblDataNascimento";
             lblDataNascimento.Size = new Size(101, 15);
             lblDataNascimento.TabIndex = 4;
@@ -134,7 +142,7 @@
             // lblEscolaridade
             // 
             lblEscolaridade.AutoSize = true;
-            lblEscolaridade.Location = new Point(634, 174);
+            lblEscolaridade.Location = new Point(6, 228);
             lblEscolaridade.Name = "lblEscolaridade";
             lblEscolaridade.Size = new Size(76, 15);
             lblEscolaridade.TabIndex = 5;
@@ -143,7 +151,7 @@
             // lblExperiencia
             // 
             lblExperiencia.AutoSize = true;
-            lblExperiencia.Location = new Point(6, 228);
+            lblExperiencia.Location = new Point(339, 231);
             lblExperiencia.Name = "lblExperiencia";
             lblExperiencia.Size = new Size(70, 15);
             lblExperiencia.TabIndex = 6;
@@ -187,7 +195,7 @@
             // 
             // dateDataNascimento
             // 
-            dateDataNascimento.Location = new Point(377, 192);
+            dateDataNascimento.Location = new Point(634, 192);
             dateDataNascimento.Name = "dateDataNascimento";
             dateDataNascimento.Size = new Size(249, 23);
             dateDataNascimento.TabIndex = 16;
@@ -195,11 +203,16 @@
             // cmbStatus
             // 
             cmbStatus.FormattingEnabled = true;
+            cmbStatus.Items.AddRange(new object[] { "Ativo", "BancoDeTalentos", "Rejeitado" });
             cmbStatus.Location = new Point(889, 192);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(197, 23);
             cmbStatus.TabIndex = 17;
             cmbStatus.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // boEmpresaServiceBindingSource1
+            // 
+            boEmpresaServiceBindingSource1.DataSource = typeof(TalentHub.BLL.Services.BoEmpresaService);
             // 
             // dataGridView1
             // 
@@ -228,6 +241,7 @@
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -237,13 +251,7 @@
             btnExcluir.TabIndex = 21;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // txtExperienciaProfissional
-            // 
-            txtExperienciaProfissional.Location = new Point(82, 228);
-            txtExperienciaProfissional.Name = "txtExperienciaProfissional";
-            txtExperienciaProfissional.Size = new Size(1004, 23);
-            txtExperienciaProfissional.TabIndex = 22;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // lblStatus
             // 
@@ -262,13 +270,6 @@
             lblHabilidades.Size = new Size(72, 15);
             lblHabilidades.TabIndex = 7;
             lblHabilidades.Text = "Habilidades:";
-            // 
-            // txtEscolaridade
-            // 
-            txtEscolaridade.Location = new Point(634, 192);
-            txtEscolaridade.Name = "txtEscolaridade";
-            txtEscolaridade.Size = new Size(249, 23);
-            txtEscolaridade.TabIndex = 23;
             // 
             // dtgCandidatos
             // 
@@ -306,14 +307,14 @@
             lblCidade.TabIndex = 27;
             lblCidade.Text = "Cidade";
             // 
-            // lblEstadoCivil
+            // lblUf
             // 
-            lblEstadoCivil.AutoSize = true;
-            lblEstadoCivil.Location = new Point(687, 72);
-            lblEstadoCivil.Name = "lblEstadoCivil";
-            lblEstadoCivil.Size = new Size(42, 15);
-            lblEstadoCivil.TabIndex = 28;
-            lblEstadoCivil.Text = "Estado";
+            lblUf.AutoSize = true;
+            lblUf.Location = new Point(687, 72);
+            lblUf.Name = "lblUf";
+            lblUf.Size = new Size(21, 15);
+            lblUf.TabIndex = 28;
+            lblUf.Text = "UF";
             // 
             // txtBairro
             // 
@@ -336,19 +337,15 @@
             txtCidade.Size = new Size(249, 23);
             txtCidade.TabIndex = 31;
             // 
-            // txtEstado
-            // 
-            txtEstado.Location = new Point(687, 90);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(101, 23);
-            txtEstado.TabIndex = 32;
-            // 
             // grpFormCandidato
             // 
+            grpFormCandidato.Controls.Add(label2);
+            grpFormCandidato.Controls.Add(cmbEstadoCivil);
+            grpFormCandidato.Controls.Add(cmbExperiencia);
+            grpFormCandidato.Controls.Add(cmbEscolaridade);
+            grpFormCandidato.Controls.Add(cmbUF);
             grpFormCandidato.Controls.Add(lblSecaoEleitor);
             grpFormCandidato.Controls.Add(txtSecaoTituloEleitor);
-            grpFormCandidato.Controls.Add(txtExperienciaProfissional);
-            grpFormCandidato.Controls.Add(txtEscolaridade);
             grpFormCandidato.Controls.Add(lblZonaEleitor);
             grpFormCandidato.Controls.Add(txtZonaTituloEleitor);
             grpFormCandidato.Controls.Add(txtHabilidades);
@@ -378,8 +375,7 @@
             grpFormCandidato.Controls.Add(txtCidadeNatal);
             grpFormCandidato.Controls.Add(lblCidadeNatal);
             grpFormCandidato.Controls.Add(txtNome);
-            grpFormCandidato.Controls.Add(lblEstadoCivil);
-            grpFormCandidato.Controls.Add(txtEstado);
+            grpFormCandidato.Controls.Add(lblUf);
             grpFormCandidato.Controls.Add(lblNome);
             grpFormCandidato.Controls.Add(txtCidade);
             grpFormCandidato.Controls.Add(lblCidade);
@@ -399,10 +395,55 @@
             grpFormCandidato.TabIndex = 33;
             grpFormCandidato.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 174);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 15);
+            label2.TabIndex = 59;
+            label2.Text = "Estato Cívil";
+            // 
+            // cmbEstadoCivil
+            // 
+            cmbEstadoCivil.FormattingEnabled = true;
+            cmbEstadoCivil.Items.AddRange(new object[] { "Solteiro", "Casado", "Divorciado", "Viuvo", "Separado" });
+            cmbEstadoCivil.Location = new Point(6, 192);
+            cmbEstadoCivil.Name = "cmbEstadoCivil";
+            cmbEstadoCivil.Size = new Size(251, 23);
+            cmbEstadoCivil.TabIndex = 58;
+            // 
+            // cmbExperiencia
+            // 
+            cmbExperiencia.FormattingEnabled = true;
+            cmbExperiencia.Items.AddRange(new object[] { "Nenhuma", "MenosDeUmAno", "UmAno", "DoisAnos", "TresAnosOuMais" });
+            cmbExperiencia.Location = new Point(415, 228);
+            cmbExperiencia.Name = "cmbExperiencia";
+            cmbExperiencia.Size = new Size(289, 23);
+            cmbExperiencia.TabIndex = 57;
+            // 
+            // cmbEscolaridade
+            // 
+            cmbEscolaridade.FormattingEnabled = true;
+            cmbEscolaridade.Items.AddRange(new object[] { "FundamentalIncompleto", "FundamentalCompleto", "MedioIncompleto", "MedioCompleto", "SuperiorIncompleto", "SuperiorCompleto", "PosGraduacaoIncompleto", "PosGraduacaoCompleto" });
+            cmbEscolaridade.Location = new Point(82, 228);
+            cmbEscolaridade.Name = "cmbEscolaridade";
+            cmbEscolaridade.Size = new Size(251, 23);
+            cmbEscolaridade.TabIndex = 56;
+            // 
+            // cmbUF
+            // 
+            cmbUF.FormattingEnabled = true;
+            cmbUF.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
+            cmbUF.Location = new Point(687, 90);
+            cmbUF.Name = "cmbUF";
+            cmbUF.Size = new Size(101, 23);
+            cmbUF.TabIndex = 55;
+            // 
             // lblSecaoEleitor
             // 
             lblSecaoEleitor.AutoSize = true;
-            lblSecaoEleitor.Location = new Point(271, 174);
+            lblSecaoEleitor.Location = new Point(528, 174);
             lblSecaoEleitor.Name = "lblSecaoEleitor";
             lblSecaoEleitor.Size = new Size(38, 15);
             lblSecaoEleitor.TabIndex = 54;
@@ -410,7 +451,7 @@
             // 
             // txtSecaoTituloEleitor
             // 
-            txtSecaoTituloEleitor.Location = new Point(271, 192);
+            txtSecaoTituloEleitor.Location = new Point(528, 192);
             txtSecaoTituloEleitor.Name = "txtSecaoTituloEleitor";
             txtSecaoTituloEleitor.Size = new Size(100, 23);
             txtSecaoTituloEleitor.TabIndex = 53;
@@ -418,7 +459,7 @@
             // lblZonaEleitor
             // 
             lblZonaEleitor.AutoSize = true;
-            lblZonaEleitor.Location = new Point(165, 174);
+            lblZonaEleitor.Location = new Point(422, 174);
             lblZonaEleitor.Name = "lblZonaEleitor";
             lblZonaEleitor.Size = new Size(34, 15);
             lblZonaEleitor.TabIndex = 52;
@@ -426,7 +467,7 @@
             // 
             // txtZonaTituloEleitor
             // 
-            txtZonaTituloEleitor.Location = new Point(165, 192);
+            txtZonaTituloEleitor.Location = new Point(422, 192);
             txtZonaTituloEleitor.Name = "txtZonaTituloEleitor";
             txtZonaTituloEleitor.Size = new Size(100, 23);
             txtZonaTituloEleitor.TabIndex = 51;
@@ -434,7 +475,7 @@
             // lblTituloEleitor
             // 
             lblTituloEleitor.AutoSize = true;
-            lblTituloEleitor.Location = new Point(6, 174);
+            lblTituloEleitor.Location = new Point(263, 174);
             lblTituloEleitor.Name = "lblTituloEleitor";
             lblTituloEleitor.Size = new Size(90, 15);
             lblTituloEleitor.TabIndex = 50;
@@ -443,7 +484,7 @@
             // 
             // txtTituloEleitor
             // 
-            txtTituloEleitor.Location = new Point(6, 192);
+            txtTituloEleitor.Location = new Point(263, 192);
             txtTituloEleitor.Name = "txtTituloEleitor";
             txtTituloEleitor.Size = new Size(153, 23);
             txtTituloEleitor.TabIndex = 49;
@@ -576,11 +617,26 @@
             lblCidadeNatal.TabIndex = 33;
             lblCidadeNatal.Text = "Cidade Natal";
             // 
+            // boEmpresaServiceBindingSource
+            // 
+            boEmpresaServiceBindingSource.DataSource = typeof(TalentHub.BLL.Services.BoEmpresaService);
+            // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(301, 633);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new Size(75, 23);
+            btnNovo.TabIndex = 34;
+            btnNovo.Text = "Novo";
+            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += btnNovo_Click;
+            // 
             // frmCadastroCandidato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1133, 668);
+            Controls.Add(btnNovo);
             Controls.Add(grpFormCandidato);
             Controls.Add(dtgCandidatos);
             Controls.Add(btnExcluir);
@@ -591,9 +647,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Cadastro do Candidato";
             Load += frmCadastroCandidato_Load;
+            ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             grpFormCandidato.ResumeLayout(false);
             grpFormCandidato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -618,19 +676,16 @@
         private Button btnSalvar;
         private Button btnEditar;
         private Button btnExcluir;
-        private TextBox txtExperienciaProfissional;
         private Label lblStatus;
         private Label lblHabilidades;
-        private TextBox txtEscolaridade;
         private Label dtgCandidatos;
         private Label lblBairro;
         private Label lblCep;
         private Label lblCidade;
-        private Label lblEstadoCivil;
+        private Label lblUf;
         private TextBox txtBairro;
         private TextBox txtCep;
         private TextBox txtCidade;
-        private TextBox txtEstado;
         private GroupBox grpFormCandidato;
         private TextBox txtCidadeNatal;
         private Label lblCidadeNatal;
@@ -654,5 +709,13 @@
         private TextBox txtSecaoTituloEleitor;
         private Label lblZonaEleitor;
         private TextBox txtZonaTituloEleitor;
+        private BindingSource boEmpresaServiceBindingSource1;
+        private BindingSource boEmpresaServiceBindingSource;
+        private ComboBox cmbUF;
+        private ComboBox cmbEscolaridade;
+        private ComboBox cmbExperiencia;
+        private Label label2;
+        private ComboBox cmbEstadoCivil;
+        private Button btnNovo;
     }
 }

@@ -18,10 +18,11 @@ namespace TalentHub.DAL
 
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Vaga> Vagas { get; set; }
-        public DbSet<Candidato> Candidatos { get; set; }
+        public DbSet<Candidato> Candidatos { get; set; }        
         public DbSet<Documento> Documentos { get; set; }
         public DbSet<Relatorio> Relatorios { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {           
@@ -45,8 +46,12 @@ namespace TalentHub.DAL
             {
                 builder.HasKey(v => v.Id);
                 builder.Property(v => v.Descricao).IsRequired().HasMaxLength(500);
-                builder.Property(v => v.Escopo).HasMaxLength(300);
+                builder.Property(v => v.EscopoVaga).HasMaxLength(300);
                 builder.Property(v => v.Status).HasMaxLength(50);
+                builder.Property(v => v.Cargo).IsRequired().HasMaxLength(100);
+                builder.Property(v => v.Salario).HasColumnType("decimal(18,2)"); 
+                builder.Property(v => v.DataAbertura).IsRequired();
+                builder.Property(v => v.DataExpiracao).IsRequired();
 
                 builder.HasMany(v => v.Feedbacks)
                     .WithOne(f => f.Vaga)
@@ -98,7 +103,7 @@ namespace TalentHub.DAL
                     .WithOne(f => f.Candidato)
                     .HasForeignKey(f => f.CandidatoId);
             });
-
+            
             //Configuração da entidade Documento
             modelBuilder.Entity<Documento>(builder =>
             {

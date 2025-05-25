@@ -36,10 +36,12 @@ namespace TalentHubBR.UI.TelasSistema
             btnSalvar = new Button();
             btnEditar = new Button();
             btnExcluir = new Button();
-            dataGridView1 = new DataGridView();
+            dgvEmpresas = new DataGridView();
             lblListaEmpresasCadastradas = new Label();
             groupBox1 = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtEmail = new TextBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresas).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,9 +50,9 @@ namespace TalentHubBR.UI.TelasSistema
             lblNome.AutoSize = true;
             lblNome.Location = new Point(13, 32);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(40, 15);
+            lblNome.Size = new Size(88, 15);
             lblNome.TabIndex = 0;
-            lblNome.Text = "Nome";
+            lblNome.Text = "Nome Empresa";
             lblNome.Click += label1_Click;
             // 
             // txtNomeEmpresa
@@ -73,7 +75,7 @@ namespace TalentHubBR.UI.TelasSistema
             // 
             txtContatoEmpresa.Location = new Point(387, 55);
             txtContatoEmpresa.Name = "txtContatoEmpresa";
-            txtContatoEmpresa.Size = new Size(354, 23);
+            txtContatoEmpresa.Size = new Size(308, 23);
             txtContatoEmpresa.TabIndex = 3;
             // 
             // btnSalvar
@@ -84,6 +86,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnSalvar.TabIndex = 4;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
@@ -93,6 +96,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -102,28 +106,32 @@ namespace TalentHubBR.UI.TelasSistema
             btnExcluir.TabIndex = 6;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
-            // dataGridView1
+            // dgvEmpresas
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 132);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1090, 363);
-            dataGridView1.TabIndex = 7;
+            dgvEmpresas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpresas.Location = new Point(13, 112);
+            dgvEmpresas.Name = "dgvEmpresas";
+            dgvEmpresas.Size = new Size(1083, 383);
+            dgvEmpresas.TabIndex = 7;
+            dgvEmpresas.CellContentClick += dgvEmpresas_CellContentClick;
             // 
             // lblListaEmpresasCadastradas
             // 
             lblListaEmpresasCadastradas.AutoSize = true;
-            lblListaEmpresasCadastradas.Location = new Point(6, 114);
+            lblListaEmpresasCadastradas.Location = new Point(13, 94);
             lblListaEmpresasCadastradas.Name = "lblListaEmpresasCadastradas";
-            lblListaEmpresasCadastradas.Size = new Size(153, 15);
+            lblListaEmpresasCadastradas.Size = new Size(122, 15);
             lblListaEmpresasCadastradas.TabIndex = 8;
-            lblListaEmpresasCadastradas.Text = "Listar Empresas cadastradas";
+            lblListaEmpresasCadastradas.Text = "Empresas cadastradas";
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtEmail);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(lblNome);
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgvEmpresas);
             groupBox1.Controls.Add(lblListaEmpresasCadastradas);
             groupBox1.Controls.Add(txtNomeEmpresa);
             groupBox1.Controls.Add(lblContato);
@@ -137,6 +145,22 @@ namespace TalentHubBR.UI.TelasSistema
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(703, 55);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(393, 23);
+            txtEmail.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(703, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(36, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Email";
+            // 
             // frmCadastroEmpresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -146,11 +170,13 @@ namespace TalentHubBR.UI.TelasSistema
             Name = "frmCadastroEmpresa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Cadastro de Empresa";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += frmCadastroEmpresa_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresas).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -166,8 +192,10 @@ namespace TalentHubBR.UI.TelasSistema
         private Button btnSalvar;
         private Button btnEditar;
         private Button btnExcluir;
-        private DataGridView dataGridView1;
+        private DataGridView dgvEmpresas;
         private Label lblListaEmpresasCadastradas;
         private GroupBox groupBox1;
+        private TextBox txtEmail;
+        private Label label1;
     }
 }

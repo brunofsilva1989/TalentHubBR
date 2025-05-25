@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TalentHub.BLL.Interfaces;
+﻿using TalentHub.BLL.Interfaces;
 using TalentHub.DAL;
+using TalentHub.Domain.Entities;
 
 namespace TalentHub.BLL.Services
 {
@@ -22,29 +18,62 @@ namespace TalentHub.BLL.Services
         #endregion
 
         #region Métodos
-        public void AdicionarEmpresa(string nome, string endereco, string telefone, string email)
+        public void AdicionarEmpresa(Empresa empresa)
         {
-            throw new NotImplementedException();
+            var empresaExistente = _context.Empresas.FirstOrDefault(e => e.Nome == empresa.Nome);
+
+            if (empresaExistente != null)
+                throw new ArgumentException("Empresa já cadastrada.");
+            
+            var novaEmpresa = new Empresa
+            {
+                Nome = empresa.Nome,
+                Contato = empresa.Contato,
+                Email = empresa.Email
+            };
+
+            _context.Empresas.Add(novaEmpresa);
+            _context.SaveChanges();
         }
 
-        public void AtualizarEmpresa(int id, string nome, string endereco, string telefone, string email)
+        public void AtualizarEmpresa(Empresa empresa)
         {
-            throw new NotImplementedException();
+            var empresaExistente = _context.Empresas.Find(empresa.Id);
+
+            if (empresaExistente == null)
+                throw new ArgumentException("Empresa não encontrada.");
+
+            empresaExistente.Nome = empresa.Nome;
+            empresaExistente.Contato = empresa.Contato;
+            empresaExistente.Email = empresa.Email;
+            
+            _context.SaveChanges();
         }
 
         public void DeletarEmpresa(int id)
         {
-            throw new NotImplementedException();
+            var empresa = _context.Empresas.Find(id);
+
+            if (empresa == null)
+                throw new ArgumentException("Empresa não encontrada.");
+
+            _context.Empresas.Remove(empresa);
+            _context.SaveChanges();
         }
 
-        public string ObterEmpresaPorId(int id)
+        public Empresa ObterEmpresaPorId(int id)
         {
-            throw new NotImplementedException();
+            var empresa = _context.Empresas.Find(id);
+
+            if (empresa == null)
+                throw new ArgumentException("Empresa não encontrada.");
+
+            return empresa;
         }
 
-        public IEnumerable<string> ObterTodasEmpresas()
+        public IEnumerable<Empresa> ObterTodasEmpresas()
         {
-            throw new NotImplementedException();
+            return _context.Empresas.ToList();
         }
         #endregion
     }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36119.2 d17.14
+VisualStudioVersion = 17.14.36119.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHubBR.UI", "TalentHubBR\TalentHubBR.UI.csproj", "{A7B27EC6-BF9C-4DF8-89FE-A9A84FD1392B}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHub.DAL", "TalentHub.DAL\TalentHub.DAL.csproj", "{F4F70759-4B0B-414F-A6CE-F9269B3E1BB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHub.Domain", "TalentHub.Domain\TalentHub.Domain.csproj", "{B9067653-9176-4E1A-8533-DC7CEBE05D0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TalentHub.Infra", "TalentHub.Infra\TalentHub.Infra.csproj", "{F05F9E7F-9D7C-4468-8C44-EE86AB4E09C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B9067653-9176-4E1A-8533-DC7CEBE05D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9067653-9176-4E1A-8533-DC7CEBE05D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9067653-9176-4E1A-8533-DC7CEBE05D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05F9E7F-9D7C-4468-8C44-EE86AB4E09C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05F9E7F-9D7C-4468-8C44-EE86AB4E09C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05F9E7F-9D7C-4468-8C44-EE86AB4E09C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05F9E7F-9D7C-4468-8C44-EE86AB4E09C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

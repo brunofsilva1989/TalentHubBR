@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TalentHub.BLL\TalentHub.BLL.csproj" />
     <ProjectReference Include="..\TalentHub.DAL\TalentHub.DAL.csproj" />
+    <ProjectReference Include="..\TalentHub.Infra\TalentHub.Infra.csproj" />
   </ItemGroup>
 
 </Project>

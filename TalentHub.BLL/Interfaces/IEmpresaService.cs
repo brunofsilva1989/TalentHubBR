@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TalentHub.Domain.Entities;
 
 namespace TalentHub.BLL.Interfaces
 {
     public interface IEmpresaService
     {
-        void AdicionarEmpresa(string nome, string endereco, string telefone, string email);
-        IEnumerable<string> ObterTodasEmpresas();
-        string ObterEmpresaPorId(int id);
-        void AtualizarEmpresa(int id, string nome, string endereco, string telefone, string email);
+        void AdicionarEmpresa(Empresa empresa);
+        IEnumerable<Empresa> ObterTodasEmpresas();
+        Empresa ObterEmpresaPorId(int id);
+        void AtualizarEmpresa(Empresa empresa);
         void DeletarEmpresa(int id);
     }
 }

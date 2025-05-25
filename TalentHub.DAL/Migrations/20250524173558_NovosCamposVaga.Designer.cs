@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TalentHub.DAL;
 
@@ -11,9 +12,11 @@ using TalentHub.DAL;
 namespace TalentHub.DAL.Migrations
 {
     [DbContext(typeof(TalentHubContext))]
-    partial class TalentHubContextModelSnapshot : ModelSnapshot
+    [Migration("20250524173558_NovosCamposVaga")]
+    partial class NovosCamposVaga
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -332,9 +335,10 @@ namespace TalentHub.DAL.Migrations
                     b.Property<decimal>("Salario")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Status")
+                    b.Property<string>("Status")
+                        .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
