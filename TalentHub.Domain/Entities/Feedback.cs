@@ -9,6 +9,8 @@ namespace TalentHub.Domain.Entities
     public class Feedback
     {
         public int Id { get; set; }
+
+        public override string ToString() => $"{Candidato?.Nome} - {Comentario}"; // Exibição personalizada do feedback
         public string Comentario { get; set; } // Comentário do feedback
         public DateTime DataFeedback { get; set; } = DateTime.Now; // Data do feedback
         public int CandidatoId { get; set; } // Chave estrangeira para o candidato

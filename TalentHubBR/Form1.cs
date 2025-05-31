@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TalentHubBR.UI.TelasSistema;
+﻿using TalentHubBR.UI.TelasSistema;
 
 namespace TalentHubBR.UI
 {
@@ -16,8 +7,12 @@ namespace TalentHubBR.UI
         public Form1()
         {
             InitializeComponent();
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            this.ControlBox = false;
         }
 
+        #region Eventos do Formulário
         private void cadastrarEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -25,45 +20,84 @@ namespace TalentHubBR.UI
 
         private void cadastrarEmpresaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // Ensure frmCadastroEmpresa inherits from Form to use ShowDialog
-            frmCadastroEmpresa form = new frmCadastroEmpresa();
-            form.ShowDialog();
+            // Pass 'this' as the required 'formOrigem' parameter to the constructor  
+            frmCadastroEmpresa form = new frmCadastroEmpresa(this);
+            form.ShowDialog(); // Show the form as a modal dialog  
+
+            
         }
 
         private void cadastrarVagaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastroVaga form = new frmCadastroVaga();
+            frmCadastroVaga form = new frmCadastroVaga(this);
             form.ShowDialog();
+
+            
         }
 
         private void cadastrarCandidatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastroCandidato form = new frmCadastroCandidato();
+            frmCadastroCandidato form = new frmCadastroCandidato(this);
             form.ShowDialog();
+
+            
         }
 
         private void uploadDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUploadDocumentos form = new frmUploadDocumentos();
+            frmUploadDocumentos form = new frmUploadDocumentos(this);
             form.ShowDialog();
+
+              
         }
 
         private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            a form = new a();
+            frmRelatorio form = new frmRelatorio(this);
             form.ShowDialog();
+
+            
         }
 
         private void bancoDeTalentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBancoTalentos form = new frmBancoTalentos();
+            frmBancoTalentos form = new frmBancoTalentos(this);
             form.ShowDialog();
+
+            
         }
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAjuda form = new frmAjuda();
             form.ShowDialog();
+        }
+
+        private void visualizarDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVisualizarDocumentos form = new frmVisualizarDocumentos(this);
+            form.ShowDialog();
+
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {            
+            var result = MessageBox.Show("Você tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {                
+                return;
+            }
         }
     }
 

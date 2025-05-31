@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCandidato));
             lblNome = new Label();
             lblEmail = new Label();
             lblTelefone = new Label();
@@ -50,7 +51,6 @@
             btnExcluir = new Button();
             lblStatus = new Label();
             lblHabilidades = new Label();
-            dtgCandidatos = new Label();
             lblBairro = new Label();
             lblCep = new Label();
             lblCidade = new Label();
@@ -88,6 +88,7 @@
             lblCidadeNatal = new Label();
             boEmpresaServiceBindingSource = new BindingSource(components);
             btnNovo = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grpFormCandidato.SuspendLayout();
@@ -97,116 +98,116 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(6, 19);
+            lblNome.Location = new Point(7, 24);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(55, 19);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(288, 19);
+            lblEmail.Location = new Point(289, 23);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
+            lblEmail.Size = new Size(50, 19);
             lblEmail.TabIndex = 1;
             lblEmail.Text = "Email:";
             // 
             // lblTelefone
             // 
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(554, 19);
+            lblTelefone.Location = new Point(543, 23);
             lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(54, 15);
+            lblTelefone.Size = new Size(71, 19);
             lblTelefone.TabIndex = 2;
             lblTelefone.Text = "Telefone:";
             // 
             // lblEndereco
             // 
             lblEndereco.AutoSize = true;
-            lblEndereco.Location = new Point(715, 19);
+            lblEndereco.Location = new Point(717, 22);
             lblEndereco.Name = "lblEndereco";
-            lblEndereco.Size = new Size(59, 15);
+            lblEndereco.Size = new Size(76, 19);
             lblEndereco.TabIndex = 3;
             lblEndereco.Text = "Endereço:";
             // 
             // lblDataNascimento
             // 
             lblDataNascimento.AutoSize = true;
-            lblDataNascimento.Location = new Point(631, 174);
+            lblDataNascimento.Location = new Point(635, 194);
             lblDataNascimento.Name = "lblDataNascimento";
-            lblDataNascimento.Size = new Size(101, 15);
+            lblDataNascimento.Size = new Size(131, 19);
             lblDataNascimento.TabIndex = 4;
             lblDataNascimento.Text = "Data Nascimento:";
             // 
             // lblEscolaridade
             // 
             lblEscolaridade.AutoSize = true;
-            lblEscolaridade.Location = new Point(6, 228);
+            lblEscolaridade.Location = new Point(6, 261);
             lblEscolaridade.Name = "lblEscolaridade";
-            lblEscolaridade.Size = new Size(76, 15);
+            lblEscolaridade.Size = new Size(99, 19);
             lblEscolaridade.TabIndex = 5;
             lblEscolaridade.Text = "Escolaridade:";
             // 
             // lblExperiencia
             // 
             lblExperiencia.AutoSize = true;
-            lblExperiencia.Location = new Point(339, 231);
+            lblExperiencia.Location = new Point(367, 261);
             lblExperiencia.Name = "lblExperiencia";
-            lblExperiencia.Size = new Size(70, 15);
+            lblExperiencia.Size = new Size(90, 19);
             lblExperiencia.TabIndex = 6;
             lblExperiencia.Text = "Experiência:";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(288, 37);
+            txtEmail.Location = new Point(288, 47);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(249, 23);
+            txtEmail.Size = new Size(249, 29);
             txtEmail.TabIndex = 10;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(6, 37);
+            txtNome.Location = new Point(7, 47);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(276, 23);
+            txtNome.Size = new Size(276, 29);
             txtNome.TabIndex = 11;
             // 
             // txtHabilidades
             // 
-            txtHabilidades.Location = new Point(82, 270);
+            txtHabilidades.Location = new Point(111, 294);
             txtHabilidades.Name = "txtHabilidades";
-            txtHabilidades.Size = new Size(1004, 23);
+            txtHabilidades.Size = new Size(981, 29);
             txtHabilidades.TabIndex = 13;
             // 
             // txtEndereco
             // 
-            txtEndereco.Location = new Point(715, 37);
+            txtEndereco.Location = new Point(715, 45);
             txtEndereco.Name = "txtEndereco";
-            txtEndereco.Size = new Size(371, 23);
+            txtEndereco.Size = new Size(377, 29);
             txtEndereco.TabIndex = 14;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(543, 37);
+            txtTelefone.Location = new Point(543, 46);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(166, 23);
+            txtTelefone.Size = new Size(166, 29);
             txtTelefone.TabIndex = 15;
             txtTelefone.TextChanged += textBox7_TextChanged;
             // 
             // dateDataNascimento
             // 
-            dateDataNascimento.Location = new Point(634, 192);
+            dateDataNascimento.Location = new Point(634, 218);
             dateDataNascimento.Name = "dateDataNascimento";
-            dateDataNascimento.Size = new Size(249, 23);
+            dateDataNascimento.Size = new Size(249, 29);
             dateDataNascimento.TabIndex = 16;
             // 
             // cmbStatus
             // 
             cmbStatus.FormattingEnabled = true;
             cmbStatus.Items.AddRange(new object[] { "Ativo", "BancoDeTalentos", "Rejeitado" });
-            cmbStatus.Location = new Point(889, 192);
+            cmbStatus.Location = new Point(889, 218);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(197, 23);
+            cmbStatus.Size = new Size(203, 27);
             cmbStatus.TabIndex = 17;
             cmbStatus.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -216,129 +217,126 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.Window;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(18, 359);
+            dataGridView1.Location = new Point(7, 340);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1103, 263);
+            dataGridView1.Size = new Size(1086, 240);
             dataGridView1.TabIndex = 18;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(417, 633);
+            btnSalvar.BackgroundImage = (Image)resources.GetObject("btnSalvar.BackgroundImage");
+            btnSalvar.BackgroundImageLayout = ImageLayout.Center;
+            btnSalvar.Location = new Point(423, 596);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.Size = new Size(65, 60);
             btnSalvar.TabIndex = 19;
-            btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(545, 633);
+            btnEditar.BackgroundImage = (Image)resources.GetObject("btnEditar.BackgroundImage");
+            btnEditar.BackgroundImageLayout = ImageLayout.Center;
+            btnEditar.Location = new Point(540, 596);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(65, 60);
             btnEditar.TabIndex = 20;
-            btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(669, 633);
+            btnExcluir.BackgroundImage = (Image)resources.GetObject("btnExcluir.BackgroundImage");
+            btnExcluir.BackgroundImageLayout = ImageLayout.Center;
+            btnExcluir.Location = new Point(656, 596);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.Size = new Size(64, 60);
             btnExcluir.TabIndex = 21;
-            btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(885, 174);
+            lblStatus.Location = new Point(889, 194);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(42, 15);
+            lblStatus.Size = new Size(55, 19);
             lblStatus.TabIndex = 7;
             lblStatus.Text = "Status:";
             // 
             // lblHabilidades
             // 
             lblHabilidades.AutoSize = true;
-            lblHabilidades.Location = new Point(6, 273);
+            lblHabilidades.Location = new Point(6, 294);
             lblHabilidades.Name = "lblHabilidades";
-            lblHabilidades.Size = new Size(72, 15);
+            lblHabilidades.Size = new Size(93, 19);
             lblHabilidades.TabIndex = 7;
             lblHabilidades.Text = "Habilidades:";
-            // 
-            // dtgCandidatos
-            // 
-            dtgCandidatos.AutoSize = true;
-            dtgCandidatos.Location = new Point(18, 341);
-            dtgCandidatos.Name = "dtgCandidatos";
-            dtgCandidatos.Size = new Size(110, 15);
-            dtgCandidatos.TabIndex = 24;
-            dtgCandidatos.Text = "Lista de Candidatos";
             // 
             // lblBairro
             // 
             lblBairro.AutoSize = true;
-            lblBairro.Location = new Point(6, 72);
+            lblBairro.Location = new Point(7, 80);
             lblBairro.Name = "lblBairro";
-            lblBairro.Size = new Size(38, 15);
+            lblBairro.Size = new Size(51, 19);
             lblBairro.TabIndex = 25;
             lblBairro.Text = "Bairro";
             // 
             // lblCep
             // 
             lblCep.AutoSize = true;
-            lblCep.Location = new Point(289, 72);
+            lblCep.Location = new Point(290, 80);
             lblCep.Name = "lblCep";
-            lblCep.Size = new Size(28, 15);
+            lblCep.Size = new Size(36, 19);
             lblCep.TabIndex = 26;
             lblCep.Text = "Cep";
             // 
             // lblCidade
             // 
             lblCidade.AutoSize = true;
-            lblCidade.Location = new Point(432, 72);
+            lblCidade.Location = new Point(432, 80);
             lblCidade.Name = "lblCidade";
-            lblCidade.Size = new Size(44, 15);
+            lblCidade.Size = new Size(57, 19);
             lblCidade.TabIndex = 27;
             lblCidade.Text = "Cidade";
             // 
             // lblUf
             // 
             lblUf.AutoSize = true;
-            lblUf.Location = new Point(687, 72);
+            lblUf.Location = new Point(687, 80);
             lblUf.Name = "lblUf";
-            lblUf.Size = new Size(21, 15);
+            lblUf.Size = new Size(28, 19);
             lblUf.TabIndex = 28;
             lblUf.Text = "UF";
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(6, 90);
+            txtBairro.Location = new Point(6, 103);
             txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(276, 23);
+            txtBairro.Size = new Size(276, 29);
             txtBairro.TabIndex = 29;
             // 
             // txtCep
             // 
-            txtCep.Location = new Point(288, 90);
+            txtCep.Location = new Point(288, 103);
             txtCep.Name = "txtCep";
-            txtCep.Size = new Size(138, 23);
+            txtCep.Size = new Size(138, 29);
             txtCep.TabIndex = 30;
             // 
             // txtCidade
             // 
-            txtCidade.Location = new Point(432, 90);
+            txtCidade.Location = new Point(432, 103);
             txtCidade.Name = "txtCidade";
-            txtCidade.Size = new Size(249, 23);
+            txtCidade.Size = new Size(249, 29);
             txtCidade.TabIndex = 31;
             // 
             // grpFormCandidato
             // 
+            grpFormCandidato.BackColor = SystemColors.ActiveCaption;
+            grpFormCandidato.BackgroundImage = (Image)resources.GetObject("grpFormCandidato.BackgroundImage");
             grpFormCandidato.Controls.Add(label2);
             grpFormCandidato.Controls.Add(cmbEstadoCivil);
             grpFormCandidato.Controls.Add(cmbExperiencia);
@@ -389,18 +387,19 @@
             grpFormCandidato.Controls.Add(lblEndereco);
             grpFormCandidato.Controls.Add(txtEndereco);
             grpFormCandidato.Controls.Add(lblBairro);
-            grpFormCandidato.Location = new Point(12, 15);
+            grpFormCandidato.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            grpFormCandidato.Location = new Point(1, -9);
             grpFormCandidato.Name = "grpFormCandidato";
-            grpFormCandidato.Size = new Size(1109, 318);
+            grpFormCandidato.Size = new Size(1112, 343);
             grpFormCandidato.TabIndex = 33;
             grpFormCandidato.TabStop = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 174);
+            label2.Location = new Point(6, 195);
             label2.Name = "label2";
-            label2.Size = new Size(65, 15);
+            label2.Size = new Size(85, 19);
             label2.TabIndex = 59;
             label2.Text = "Estato Cívil";
             // 
@@ -408,212 +407,212 @@
             // 
             cmbEstadoCivil.FormattingEnabled = true;
             cmbEstadoCivil.Items.AddRange(new object[] { "Solteiro", "Casado", "Divorciado", "Viuvo", "Separado" });
-            cmbEstadoCivil.Location = new Point(6, 192);
+            cmbEstadoCivil.Location = new Point(6, 218);
             cmbEstadoCivil.Name = "cmbEstadoCivil";
-            cmbEstadoCivil.Size = new Size(251, 23);
+            cmbEstadoCivil.Size = new Size(251, 27);
             cmbEstadoCivil.TabIndex = 58;
             // 
             // cmbExperiencia
             // 
             cmbExperiencia.FormattingEnabled = true;
             cmbExperiencia.Items.AddRange(new object[] { "Nenhuma", "MenosDeUmAno", "UmAno", "DoisAnos", "TresAnosOuMais" });
-            cmbExperiencia.Location = new Point(415, 228);
+            cmbExperiencia.Location = new Point(462, 261);
             cmbExperiencia.Name = "cmbExperiencia";
-            cmbExperiencia.Size = new Size(289, 23);
+            cmbExperiencia.Size = new Size(289, 27);
             cmbExperiencia.TabIndex = 57;
             // 
             // cmbEscolaridade
             // 
             cmbEscolaridade.FormattingEnabled = true;
             cmbEscolaridade.Items.AddRange(new object[] { "FundamentalIncompleto", "FundamentalCompleto", "MedioIncompleto", "MedioCompleto", "SuperiorIncompleto", "SuperiorCompleto", "PosGraduacaoIncompleto", "PosGraduacaoCompleto" });
-            cmbEscolaridade.Location = new Point(82, 228);
+            cmbEscolaridade.Location = new Point(111, 261);
             cmbEscolaridade.Name = "cmbEscolaridade";
-            cmbEscolaridade.Size = new Size(251, 23);
+            cmbEscolaridade.Size = new Size(251, 27);
             cmbEscolaridade.TabIndex = 56;
             // 
             // cmbUF
             // 
             cmbUF.FormattingEnabled = true;
             cmbUF.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
-            cmbUF.Location = new Point(687, 90);
+            cmbUF.Location = new Point(687, 103);
             cmbUF.Name = "cmbUF";
-            cmbUF.Size = new Size(101, 23);
+            cmbUF.Size = new Size(101, 27);
             cmbUF.TabIndex = 55;
             // 
             // lblSecaoEleitor
             // 
             lblSecaoEleitor.AutoSize = true;
-            lblSecaoEleitor.Location = new Point(528, 174);
+            lblSecaoEleitor.Location = new Point(530, 194);
             lblSecaoEleitor.Name = "lblSecaoEleitor";
-            lblSecaoEleitor.Size = new Size(38, 15);
+            lblSecaoEleitor.Size = new Size(50, 19);
             lblSecaoEleitor.TabIndex = 54;
             lblSecaoEleitor.Text = "Seção";
             // 
             // txtSecaoTituloEleitor
             // 
-            txtSecaoTituloEleitor.Location = new Point(528, 192);
+            txtSecaoTituloEleitor.Location = new Point(528, 219);
             txtSecaoTituloEleitor.Name = "txtSecaoTituloEleitor";
-            txtSecaoTituloEleitor.Size = new Size(100, 23);
+            txtSecaoTituloEleitor.Size = new Size(100, 29);
             txtSecaoTituloEleitor.TabIndex = 53;
             // 
             // lblZonaEleitor
             // 
             lblZonaEleitor.AutoSize = true;
-            lblZonaEleitor.Location = new Point(422, 174);
+            lblZonaEleitor.Location = new Point(423, 195);
             lblZonaEleitor.Name = "lblZonaEleitor";
-            lblZonaEleitor.Size = new Size(34, 15);
+            lblZonaEleitor.Size = new Size(44, 19);
             lblZonaEleitor.TabIndex = 52;
             lblZonaEleitor.Text = "Zona";
             // 
             // txtZonaTituloEleitor
             // 
-            txtZonaTituloEleitor.Location = new Point(422, 192);
+            txtZonaTituloEleitor.Location = new Point(422, 219);
             txtZonaTituloEleitor.Name = "txtZonaTituloEleitor";
-            txtZonaTituloEleitor.Size = new Size(100, 23);
+            txtZonaTituloEleitor.Size = new Size(100, 29);
             txtZonaTituloEleitor.TabIndex = 51;
             // 
             // lblTituloEleitor
             // 
             lblTituloEleitor.AutoSize = true;
-            lblTituloEleitor.Location = new Point(263, 174);
+            lblTituloEleitor.Location = new Point(264, 196);
             lblTituloEleitor.Name = "lblTituloEleitor";
-            lblTituloEleitor.Size = new Size(90, 15);
+            lblTituloEleitor.Size = new Size(118, 19);
             lblTituloEleitor.TabIndex = 50;
             lblTituloEleitor.Text = "N° Título Eleitor";
             lblTituloEleitor.Click += lblTituloEleitor_Click;
             // 
             // txtTituloEleitor
             // 
-            txtTituloEleitor.Location = new Point(263, 192);
+            txtTituloEleitor.Location = new Point(263, 219);
             txtTituloEleitor.Name = "txtTituloEleitor";
-            txtTituloEleitor.Size = new Size(153, 23);
+            txtTituloEleitor.Size = new Size(153, 29);
             txtTituloEleitor.TabIndex = 49;
             // 
             // lblSerieCTPS
             // 
             lblSerieCTPS.AutoSize = true;
-            lblSerieCTPS.Location = new Point(926, 121);
+            lblSerieCTPS.Location = new Point(926, 135);
             lblSerieCTPS.Name = "lblSerieCTPS";
-            lblSerieCTPS.Size = new Size(62, 15);
+            lblSerieCTPS.Size = new Size(84, 19);
             lblSerieCTPS.TabIndex = 48;
             lblSerieCTPS.Text = "Série CTPS";
             // 
             // txtSerieCTPS
             // 
-            txtSerieCTPS.Location = new Point(926, 139);
+            txtSerieCTPS.Location = new Point(926, 159);
             txtSerieCTPS.Name = "txtSerieCTPS";
-            txtSerieCTPS.Size = new Size(160, 23);
+            txtSerieCTPS.Size = new Size(166, 29);
             txtSerieCTPS.TabIndex = 47;
             // 
             // lblNumeroCTPS
             // 
             lblNumeroCTPS.AutoSize = true;
-            lblNumeroCTPS.Location = new Point(762, 122);
+            lblNumeroCTPS.Location = new Point(762, 135);
             lblNumeroCTPS.Name = "lblNumeroCTPS";
-            lblNumeroCTPS.Size = new Size(51, 15);
+            lblNumeroCTPS.Size = new Size(67, 19);
             lblNumeroCTPS.TabIndex = 46;
             lblNumeroCTPS.Text = "N° CTPS";
             // 
             // txtNumeroCTPS
             // 
-            txtNumeroCTPS.Location = new Point(762, 140);
+            txtNumeroCTPS.Location = new Point(762, 159);
             txtNumeroCTPS.Name = "txtNumeroCTPS";
-            txtNumeroCTPS.Size = new Size(158, 23);
+            txtNumeroCTPS.Size = new Size(158, 29);
             txtNumeroCTPS.TabIndex = 45;
             // 
             // txtNomeMae
             // 
-            txtNomeMae.Location = new Point(502, 140);
+            txtNomeMae.Location = new Point(502, 159);
             txtNomeMae.Name = "txtNomeMae";
-            txtNomeMae.Size = new Size(253, 23);
+            txtNomeMae.Size = new Size(253, 29);
             txtNomeMae.TabIndex = 44;
             // 
             // lblNomeMae
             // 
             lblNomeMae.AutoSize = true;
-            lblNomeMae.Location = new Point(499, 122);
+            lblNomeMae.Location = new Point(502, 135);
             lblNomeMae.Name = "lblNomeMae";
-            lblNomeMae.Size = new Size(82, 15);
+            lblNomeMae.Size = new Size(107, 19);
             lblNomeMae.TabIndex = 43;
             lblNomeMae.Text = "Nome da Mãe";
             // 
             // lblOrgaoEmissor
             // 
             lblOrgaoEmissor.AutoSize = true;
-            lblOrgaoEmissor.Location = new Point(396, 122);
+            lblOrgaoEmissor.Location = new Point(382, 136);
             lblOrgaoEmissor.Name = "lblOrgaoEmissor";
-            lblOrgaoEmissor.Size = new Size(84, 15);
+            lblOrgaoEmissor.Size = new Size(112, 19);
             lblOrgaoEmissor.TabIndex = 42;
             lblOrgaoEmissor.Text = "Orgão Emissor";
             // 
             // txtOrgaoEmissor
             // 
-            txtOrgaoEmissor.Location = new Point(396, 140);
+            txtOrgaoEmissor.Location = new Point(382, 160);
             txtOrgaoEmissor.Name = "txtOrgaoEmissor";
-            txtOrgaoEmissor.Size = new Size(100, 23);
+            txtOrgaoEmissor.Size = new Size(114, 29);
             txtOrgaoEmissor.TabIndex = 41;
             // 
             // txtRg
             // 
-            txtRg.Location = new Point(224, 140);
+            txtRg.Location = new Point(224, 160);
             txtRg.Name = "txtRg";
-            txtRg.Size = new Size(166, 23);
+            txtRg.Size = new Size(152, 29);
             txtRg.TabIndex = 40;
             // 
             // lblRg
             // 
             lblRg.AutoSize = true;
-            lblRg.Location = new Point(224, 122);
+            lblRg.Location = new Point(226, 137);
             lblRg.Name = "lblRg";
-            lblRg.Size = new Size(21, 15);
+            lblRg.Size = new Size(28, 19);
             lblRg.TabIndex = 39;
             lblRg.Text = "Rg";
             // 
             // lblCpfCnpj
             // 
             lblCpfCnpj.AutoSize = true;
-            lblCpfCnpj.Location = new Point(6, 122);
+            lblCpfCnpj.Location = new Point(6, 137);
             lblCpfCnpj.Name = "lblCpfCnpj";
-            lblCpfCnpj.Size = new Size(75, 15);
+            lblCpfCnpj.Size = new Size(99, 19);
             lblCpfCnpj.TabIndex = 38;
             lblCpfCnpj.Text = "CPF ou CNPJ";
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(6, 140);
+            txtCpf.Location = new Point(6, 160);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(212, 23);
+            txtCpf.Size = new Size(212, 29);
             txtCpf.TabIndex = 37;
             // 
             // txtNacionalidade
             // 
-            txtNacionalidade.Location = new Point(933, 90);
+            txtNacionalidade.Location = new Point(933, 102);
             txtNacionalidade.Name = "txtNacionalidade";
-            txtNacionalidade.Size = new Size(153, 23);
+            txtNacionalidade.Size = new Size(159, 29);
             txtNacionalidade.TabIndex = 36;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(926, 69);
+            label1.Location = new Point(933, 78);
             label1.Name = "label1";
-            label1.Size = new Size(83, 15);
+            label1.Size = new Size(108, 19);
             label1.TabIndex = 35;
             label1.Text = "Nacionalidade";
             // 
             // txtCidadeNatal
             // 
-            txtCidadeNatal.Location = new Point(794, 90);
+            txtCidadeNatal.Location = new Point(794, 101);
             txtCidadeNatal.Name = "txtCidadeNatal";
-            txtCidadeNatal.Size = new Size(133, 23);
+            txtCidadeNatal.Size = new Size(133, 29);
             txtCidadeNatal.TabIndex = 34;
             // 
             // lblCidadeNatal
             // 
             lblCidadeNatal.AutoSize = true;
-            lblCidadeNatal.Location = new Point(794, 72);
+            lblCidadeNatal.Location = new Point(794, 78);
             lblCidadeNatal.Name = "lblCidadeNatal";
-            lblCidadeNatal.Size = new Size(75, 15);
+            lblCidadeNatal.Size = new Size(98, 19);
             lblCidadeNatal.TabIndex = 33;
             lblCidadeNatal.Text = "Cidade Natal";
             // 
@@ -623,22 +622,35 @@
             // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(301, 633);
+            btnNovo.BackgroundImage = (Image)resources.GetObject("btnNovo.BackgroundImage");
+            btnNovo.BackgroundImageLayout = ImageLayout.Center;
+            btnNovo.Location = new Point(312, 596);
             btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(75, 23);
+            btnNovo.Size = new Size(65, 60);
             btnNovo.TabIndex = 34;
-            btnNovo.Text = "Novo";
             btnNovo.UseVisualStyleBackColor = true;
             btnNovo.Click += btnNovo_Click;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.Location = new Point(1039, 600);
+            button1.Name = "button1";
+            button1.Size = new Size(54, 52);
+            button1.TabIndex = 35;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmCadastroCandidato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1133, 668);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1112, 668);
+            Controls.Add(button1);
             Controls.Add(btnNovo);
             Controls.Add(grpFormCandidato);
-            Controls.Add(dtgCandidatos);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
             Controls.Add(btnSalvar);
@@ -653,7 +665,6 @@
             grpFormCandidato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)boEmpresaServiceBindingSource).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -678,7 +689,6 @@
         private Button btnExcluir;
         private Label lblStatus;
         private Label lblHabilidades;
-        private Label dtgCandidatos;
         private Label lblBairro;
         private Label lblCep;
         private Label lblCidade;
@@ -717,5 +727,6 @@
         private Label label2;
         private ComboBox cmbEstadoCivil;
         private Button btnNovo;
+        private Button button1;
     }
 }

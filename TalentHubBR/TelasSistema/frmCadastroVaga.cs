@@ -10,10 +10,11 @@ namespace TalentHubBR.UI.TelasSistema
         private readonly BoVagaService _vagaService;
         private readonly BoEmpresaService _empresaService;
         private int _vagaIdSelecionada = 0;
+        private Form _formOrigem;
         #endregion
 
 
-        public frmCadastroVaga()
+        public frmCadastroVaga(Form formOrigem)
         {
             InitializeComponent();
 
@@ -21,6 +22,7 @@ namespace TalentHubBR.UI.TelasSistema
             _vagaService = new BoVagaService(context);
             _empresaService = new BoEmpresaService(context);
             CarregarEmpresas();
+            _formOrigem = formOrigem;
         }
 
         #region Eventos do Formulário
@@ -202,5 +204,11 @@ namespace TalentHubBR.UI.TelasSistema
             }
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _formOrigem.Show();
+            this.Close(); // Fecha o formulário atual
+        }
     }
 }

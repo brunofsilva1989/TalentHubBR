@@ -1,6 +1,6 @@
 ﻿namespace TalentHubBR.UI.TelasSistema
 {
-    partial class a
+    partial class frmRelatorio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelatorio));
             lblSelecionado = new Label();
             lblTipo = new Label();
             cmbSelecionado = new ComboBox();
@@ -36,6 +37,7 @@
             dgvRelatorios = new DataGridView();
             lblRelatorios = new Label();
             groupBox1 = new GroupBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvRelatorios).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -43,67 +45,80 @@
             // lblSelecionado
             // 
             lblSelecionado.AutoSize = true;
-            lblSelecionado.Location = new Point(515, 41);
+            lblSelecionado.BackColor = SystemColors.ActiveCaption;
+            lblSelecionado.Location = new Point(515, 25);
             lblSelecionado.Name = "lblSelecionado";
-            lblSelecionado.Size = new Size(74, 15);
+            lblSelecionado.Size = new Size(96, 19);
             lblSelecionado.TabIndex = 0;
             lblSelecionado.Text = "Selecionado:";
             // 
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(6, 41);
+            lblTipo.BackColor = SystemColors.ActiveCaption;
+            lblTipo.ForeColor = SystemColors.ActiveCaptionText;
+            lblTipo.Location = new Point(6, 25);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(30, 15);
+            lblTipo.Size = new Size(39, 19);
             lblTipo.TabIndex = 1;
             lblTipo.Text = "Tipo";
             // 
             // cmbSelecionado
             // 
             cmbSelecionado.FormattingEnabled = true;
-            cmbSelecionado.Location = new Point(515, 59);
+            cmbSelecionado.Items.AddRange(new object[] { "Geral" });
+            cmbSelecionado.Location = new Point(515, 48);
             cmbSelecionado.Name = "cmbSelecionado";
-            cmbSelecionado.Size = new Size(461, 23);
+            cmbSelecionado.Size = new Size(500, 27);
             cmbSelecionado.TabIndex = 2;
-            cmbSelecionado.Text = "Nome x";
+            cmbSelecionado.SelectedIndexChanged += cmbSelecionado_SelectedIndexChanged;
             // 
             // cmbTipoRelatorio
             // 
             cmbTipoRelatorio.FormattingEnabled = true;
-            cmbTipoRelatorio.Location = new Point(6, 59);
+            cmbTipoRelatorio.Items.AddRange(new object[] { "Selecione", "Candidatos", "Empresas", "Vagas", "Feedbacks" });
+            cmbTipoRelatorio.Location = new Point(6, 48);
             cmbTipoRelatorio.Name = "cmbTipoRelatorio";
-            cmbTipoRelatorio.Size = new Size(503, 23);
+            cmbTipoRelatorio.Size = new Size(503, 27);
             cmbTipoRelatorio.TabIndex = 3;
-            cmbTipoRelatorio.Text = "Por Candidato";
+            cmbTipoRelatorio.Text = "Ex: Rel. Candidato";
+            cmbTipoRelatorio.SelectedIndexChanged += cmbTipoRelatorio_SelectedIndexChanged;
             // 
             // btnGerarRelatorio
             // 
-            btnGerarRelatorio.Location = new Point(982, 59);
+            btnGerarRelatorio.Image = (Image)resources.GetObject("btnGerarRelatorio.Image");
+            btnGerarRelatorio.Location = new Point(1021, 48);
             btnGerarRelatorio.Name = "btnGerarRelatorio";
-            btnGerarRelatorio.Size = new Size(100, 23);
+            btnGerarRelatorio.Size = new Size(61, 46);
             btnGerarRelatorio.TabIndex = 4;
-            btnGerarRelatorio.Text = "Gerar Relatório";
             btnGerarRelatorio.UseVisualStyleBackColor = true;
+            btnGerarRelatorio.Click += btnGerarRelatorio_Click;
             // 
             // dgvRelatorios
             // 
+            dgvRelatorios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvRelatorios.BackgroundColor = SystemColors.ButtonHighlight;
             dgvRelatorios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRelatorios.Location = new Point(6, 127);
             dgvRelatorios.Name = "dgvRelatorios";
-            dgvRelatorios.Size = new Size(1076, 293);
+            dgvRelatorios.Size = new Size(1076, 260);
             dgvRelatorios.TabIndex = 5;
+            dgvRelatorios.CellContentClick += dgvRelatorios_CellContentClick;
             // 
             // lblRelatorios
             // 
             lblRelatorios.AutoSize = true;
-            lblRelatorios.Location = new Point(6, 98);
+            lblRelatorios.BackColor = SystemColors.ActiveCaption;
+            lblRelatorios.Location = new Point(6, 105);
             lblRelatorios.Name = "lblRelatorios";
-            lblRelatorios.Size = new Size(59, 15);
+            lblRelatorios.Size = new Size(79, 19);
             lblRelatorios.TabIndex = 6;
             lblRelatorios.Text = "Relatorios";
             // 
             // groupBox1
             // 
+            groupBox1.BackgroundImage = (Image)resources.GetObject("groupBox1.BackgroundImage");
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dgvRelatorios);
             groupBox1.Controls.Add(lblRelatorios);
             groupBox1.Controls.Add(lblSelecionado);
@@ -111,21 +126,35 @@
             groupBox1.Controls.Add(lblTipo);
             groupBox1.Controls.Add(cmbTipoRelatorio);
             groupBox1.Controls.Add(cmbSelecionado);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(-2, -10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1088, 426);
+            groupBox1.Size = new Size(1090, 465);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             // 
-            // a
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.Location = new Point(1029, 393);
+            button1.Name = "button1";
+            button1.Size = new Size(53, 52);
+            button1.TabIndex = 7;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // frmRelatorio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1112, 450);
+            ClientSize = new Size(1085, 450);
             Controls.Add(groupBox1);
-            Name = "a";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tela de Relatório";
+            Text = "TalentHub Br - Relatórios";
+            Load += a_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRelatorios).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -142,5 +171,6 @@
         private DataGridView dgvRelatorios;
         private Label lblRelatorios;
         private GroupBox groupBox1;
+        private Button button1;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroVaga));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblDescricao = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,6 +44,7 @@
             dgvVagas = new DataGridView();
             lblVagas = new Label();
             groupBox1 = new GroupBox();
+            button1 = new Button();
             btnNovo = new Button();
             label7 = new Label();
             label6 = new Label();
@@ -58,36 +61,44 @@
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(6, 19);
+            lblDescricao.BackColor = SystemColors.ActiveCaption;
+            lblDescricao.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescricao.Location = new Point(6, 15);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(58, 15);
+            lblDescricao.Size = new Size(76, 19);
             lblDescricao.TabIndex = 0;
             lblDescricao.Text = "Descrição";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(397, 19);
+            label2.BackColor = SystemColors.ActiveCaption;
+            label2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(397, 15);
             label2.Name = "label2";
-            label2.Size = new Size(89, 15);
+            label2.Size = new Size(118, 19);
             label2.TabIndex = 1;
             label2.Text = "Escopo da Vaga";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 72);
+            label3.BackColor = SystemColors.ActiveCaption;
+            label3.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(6, 68);
             label3.Name = "label3";
-            label3.Size = new Size(39, 15);
+            label3.Size = new Size(52, 19);
             label3.TabIndex = 2;
             label3.Text = "Status";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(103, 72);
+            label4.BackColor = SystemColors.ActiveCaption;
+            label4.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(103, 69);
             label4.Name = "label4";
-            label4.Size = new Size(52, 15);
+            label4.Size = new Size(69, 19);
             label4.TabIndex = 3;
             label4.Text = "Empresa";
             // 
@@ -102,7 +113,7 @@
             // 
             txtEscopoVaga.Location = new Point(397, 37);
             txtEscopoVaga.Name = "txtEscopoVaga";
-            txtEscopoVaga.Size = new Size(687, 23);
+            txtEscopoVaga.Size = new Size(720, 23);
             txtEscopoVaga.TabIndex = 5;
             // 
             // cmbStatus
@@ -124,54 +135,64 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(397, 515);
+            btnSalvar.Image = (Image)resources.GetObject("btnSalvar.Image");
+            btnSalvar.Location = new Point(1123, 213);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.Size = new Size(58, 55);
             btnSalvar.TabIndex = 8;
-            btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(568, 515);
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.Location = new Point(1123, 274);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(58, 55);
             btnEditar.TabIndex = 9;
-            btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(743, 515);
+            btnExcluir.Image = (Image)resources.GetObject("btnExcluir.Image");
+            btnExcluir.Location = new Point(1121, 335);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.Size = new Size(60, 55);
             btnExcluir.TabIndex = 10;
-            btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // dgvVagas
             // 
+            dataGridViewCellStyle1.BackColor = Color.Blue;
+            dgvVagas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvVagas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvVagas.BackgroundColor = SystemColors.Control;
+            dgvVagas.BorderStyle = BorderStyle.Fixed3D;
             dgvVagas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVagas.Location = new Point(6, 152);
             dgvVagas.Name = "dgvVagas";
-            dgvVagas.Size = new Size(1078, 357);
+            dgvVagas.Size = new Size(1111, 357);
             dgvVagas.TabIndex = 11;
             dgvVagas.CellContentClick += dgvVagas_CellContentClick;
             // 
             // lblVagas
             // 
             lblVagas.AutoSize = true;
-            lblVagas.Location = new Point(6, 134);
+            lblVagas.BackColor = SystemColors.ActiveCaption;
+            lblVagas.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblVagas.Location = new Point(6, 130);
             lblVagas.Name = "lblVagas";
-            lblVagas.Size = new Size(37, 15);
+            lblVagas.Size = new Size(51, 19);
             lblVagas.TabIndex = 12;
             lblVagas.Text = "Vagas";
             // 
             // groupBox1
             // 
+            groupBox1.AutoSize = true;
+            groupBox1.BackgroundImage = (Image)resources.GetObject("groupBox1.BackgroundImage");
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(btnNovo);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
@@ -194,50 +215,66 @@
             groupBox1.Controls.Add(cmbStatus);
             groupBox1.Controls.Add(cmbEmpresa);
             groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(0, 1);
+            groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1112, 565);
+            groupBox1.Size = new Size(1212, 551);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.Location = new Point(1123, 454);
+            button1.Name = "button1";
+            button1.Size = new Size(60, 55);
+            button1.TabIndex = 22;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(220, 515);
+            btnNovo.BackgroundImage = (Image)resources.GetObject("btnNovo.BackgroundImage");
+            btnNovo.BackgroundImageLayout = ImageLayout.Center;
+            btnNovo.Location = new Point(1123, 152);
             btnNovo.Name = "btnNovo";
-            btnNovo.Size = new Size(75, 23);
+            btnNovo.Size = new Size(58, 55);
             btnNovo.TabIndex = 21;
-            btnNovo.Text = "Novo";
             btnNovo.UseVisualStyleBackColor = true;
             btnNovo.Click += btnNovo_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(837, 72);
+            label7.BackColor = SystemColors.ActiveCaption;
+            label7.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(854, 69);
             label7.Name = "label7";
-            label7.Size = new Size(113, 15);
+            label7.Size = new Size(148, 19);
             label7.TabIndex = 20;
             label7.Text = "Data expiração vaga";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(585, 72);
+            label6.BackColor = SystemColors.ActiveCaption;
+            label6.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(602, 68);
             label6.Name = "label6";
-            label6.Size = new Size(106, 15);
+            label6.Size = new Size(141, 19);
             label6.TabIndex = 19;
             label6.Text = "Data abertura vaga";
             // 
             // dtpDataExpiracao
             // 
-            dtpDataExpiracao.Location = new Point(837, 90);
+            dtpDataExpiracao.Location = new Point(854, 90);
             dtpDataExpiracao.Name = "dtpDataExpiracao";
-            dtpDataExpiracao.Size = new Size(247, 23);
+            dtpDataExpiracao.Size = new Size(263, 23);
             dtpDataExpiracao.TabIndex = 18;
             // 
             // dtpDataAbertura
             // 
-            dtpDataAbertura.Location = new Point(585, 90);
+            dtpDataAbertura.Location = new Point(602, 90);
             dtpDataAbertura.Name = "dtpDataAbertura";
             dtpDataAbertura.Size = new Size(246, 23);
             dtpDataAbertura.TabIndex = 17;
@@ -245,18 +282,22 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(480, 72);
+            label5.BackColor = SystemColors.ActiveCaption;
+            label5.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(480, 68);
             label5.Name = "label5";
-            label5.Size = new Size(42, 15);
+            label5.Size = new Size(57, 19);
             label5.TabIndex = 16;
             label5.Text = "Salario";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(297, 72);
+            label1.BackColor = SystemColors.ActiveCaption;
+            label1.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(297, 68);
             label1.Name = "label1";
-            label1.Size = new Size(39, 15);
+            label1.Size = new Size(51, 19);
             label1.TabIndex = 15;
             label1.Text = "Cargo";
             // 
@@ -264,7 +305,7 @@
             // 
             txtSalario.Location = new Point(480, 90);
             txtSalario.Name = "txtSalario";
-            txtSalario.Size = new Size(99, 23);
+            txtSalario.Size = new Size(116, 23);
             txtSalario.TabIndex = 14;
             // 
             // txtCargo
@@ -278,16 +319,18 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1114, 568);
+            ClientSize = new Size(1210, 531);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroVaga";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Tela Cadastro de Vaga";
+            Text = "TalentHub BR - Cadastro de Vaga";
             Load += frmCadastroVaga_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVagas).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -315,5 +358,6 @@
         private DateTimePicker dtpDataExpiracao;
         private DateTimePicker dtpDataAbertura;
         private Button btnNovo;
+        private Button button1;
     }
 }

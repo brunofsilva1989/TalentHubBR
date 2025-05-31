@@ -12,14 +12,16 @@ namespace TalentHubBR.UI.TelasSistema
         private readonly BoCandidatoService _candidatoService;
         private int _candidatoIdSelecionado = 0;
         private readonly ILogger<frmCadastroCandidato> logger = LoggerConfig.CreateLogger<frmCadastroCandidato>();
+        private Form _formOrigem;
         #endregion
 
-        public frmCadastroCandidato()
+        public frmCadastroCandidato(Form formOrigem)
         {
             InitializeComponent();
 
             var context = new TalentHubContext();
             _candidatoService = new BoCandidatoService(context);
+            _formOrigem = formOrigem;
         }
 
         #region Eventos do Formulário
@@ -195,7 +197,7 @@ namespace TalentHubBR.UI.TelasSistema
             {
                 candidatos = candidatos.Where(c => c.Status == StatusCandidato.Ativo).ToList();
             }
-                            
+
             dataGridView1.DataSource = candidatos.ToList();
         }
 
@@ -216,7 +218,7 @@ namespace TalentHubBR.UI.TelasSistema
         private void RecarregaGridAposCriarDado()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.Rows.Clear(); 
+            dataGridView1.Rows.Clear();
             CarregarCandidatos(true);
         }
 
@@ -253,5 +255,11 @@ namespace TalentHubBR.UI.TelasSistema
             cmbStatus.SelectedIndex = -1;
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            _formOrigem.Show();
+            this.Close();
+        }
     }
 }

@@ -16,10 +16,15 @@ namespace TalentHubBR.UI.TelasSistema
     public partial class frmBancoTalentos : Form
     {
         private readonly ICandidatoService _candidatoService;
+        private Form _formOrigem;
 
-        public frmBancoTalentos()
+        public frmBancoTalentos(Form formOrigem)
         {
             InitializeComponent();
+            this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            this.ControlBox = false;
+            _formOrigem = formOrigem;
             var context = new TalentHub.DAL.TalentHubContext();
             _candidatoService = new BoCandidatoService(context);
         }
@@ -65,6 +70,12 @@ namespace TalentHubBR.UI.TelasSistema
         private void frmBancoTalentos_Load(object sender, EventArgs e)
         {
             CarregarBancoDeTalentos();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            _formOrigem.Show(); // Esconde o formulário de origem
+            this.Close(); // Fecha o formulário atual
         }
     }
 }

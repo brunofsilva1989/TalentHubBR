@@ -10,6 +10,7 @@ namespace TalentHub.Domain.Entities
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+        public override string ToString() => Nome;
         public string Tipo { get; set; } // Ex: PDF, DOCX, etc.
         public byte[] Conteudo { get; set; } // Conteúdo do documento em bytes
         public DateTime DataUpload { get; set; } = DateTime.Now;

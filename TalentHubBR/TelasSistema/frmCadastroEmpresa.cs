@@ -18,14 +18,16 @@ namespace TalentHubBR.UI.TelasSistema
         #region Propriedades Privadas
         private readonly BoEmpresaService _empresaService;
         private int _empresaIdSelecionada = 0;
+        private Form _formOrigem;
         #endregion
 
-        public frmCadastroEmpresa()
+        public frmCadastroEmpresa(Form formOrigem)
         {
             InitializeComponent();
 
             var context = new TalentHubContext();
             _empresaService = new BoEmpresaService(context);
+            _formOrigem = formOrigem;
         }
 
         #region Eventos do Formulário
@@ -91,7 +93,7 @@ namespace TalentHubBR.UI.TelasSistema
             {
                 if (empresaSelecionada != null)
                 {
-                    _empresaIdSelecionada = empresaSelecionada.Id; 
+                    _empresaIdSelecionada = empresaSelecionada.Id;
                     txtNomeEmpresa.Text = empresaSelecionada.Nome;
                     txtContatoEmpresa.Text = empresaSelecionada.Contato;
                     txtEmail.Text = empresaSelecionada.Email;
@@ -130,7 +132,7 @@ namespace TalentHubBR.UI.TelasSistema
         {
             dgvEmpresas.DataSource = null;
             dgvEmpresas.ClearSelection();
-            CarregarEmpresas();            
+            CarregarEmpresas();
         }
 
         private void ExcluirEmpresa(int id)
@@ -154,6 +156,22 @@ namespace TalentHubBR.UI.TelasSistema
                 RecarregarGrid();
             }
         }
-        #endregion        
+        #endregion
+
+        private void lblContato_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblListaEmpresasCadastradas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _formOrigem.Show(); // Mostra o formulário de origem
+            this.Close(); // Fecha o formulário atual
+        }
     }
 }

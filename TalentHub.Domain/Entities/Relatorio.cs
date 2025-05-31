@@ -9,16 +9,27 @@ namespace TalentHub.Domain.Entities
     public class Relatorio
     {
         public int Id { get; set; }
-        public string NomeRelatorio { get; set; } // Nome do relatório
-        public string TipoRelatorio { get; set; } // Tipo de relatório (ex: PDF, Excel, etc.)
+        public string NomeRelatorio { get; set; }
+        public override string ToString() => NomeRelatorio;
+        public TipoRelatorio TipoRelatorio { get; set; } 
         public string CaminhoArquivo { get; set; }
         public string Descricao { get; set; }
-        public DateTime DataGeracao { get; set; } = DateTime.Now; // Data de geração do relatório
+        public DateTime DataGeracao { get; set; } = DateTime.Now; 
 
-        public int CandidatoId { get; set; } // Chave estrangeira para o candidato
+        public int CandidatoId { get; set; } 
         public Candidato Candidato { get; set; }
-        public string Conteudo { get; set; } // Conteúdo do relatório em formato apropriado (ex: JSON, XML, etc.)
-        public int VagaId { get; set; } // Chave estrangeira para a vaga relacionada
-        public Vaga Vaga { get; set; } // Navegação para a vaga relacionadaa
+        public string Conteudo { get; set; } 
+        public int VagaId { get; set; } 
+        public Vaga Vaga { get; set; }
+        public Empresa Empresa { get; set; } 
+        public int EmpresaId { get; set; } 
+    }
+
+    public enum TipoRelatorio
+    {
+        Candidato,
+        Vaga,
+        Feedback,
+        Geral
     }
 }
