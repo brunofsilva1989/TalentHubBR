@@ -90,7 +90,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnSalvar.Location = new Point(582, 151);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(50, 54);
-            btnSalvar.TabIndex = 4;
+            btnSalvar.TabIndex = 8;
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
@@ -101,7 +101,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnEditar.Location = new Point(582, 211);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(50, 51);
-            btnEditar.TabIndex = 5;
+            btnEditar.TabIndex = 9;
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -112,7 +112,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnExcluir.Location = new Point(582, 268);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(50, 51);
-            btnExcluir.TabIndex = 6;
+            btnExcluir.TabIndex = 10;
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
@@ -135,7 +135,7 @@ namespace TalentHubBR.UI.TelasSistema
             lblListaEmpresasCadastradas.Location = new Point(12, 129);
             lblListaEmpresasCadastradas.Name = "lblListaEmpresasCadastradas";
             lblListaEmpresasCadastradas.Size = new Size(162, 19);
-            lblListaEmpresasCadastradas.TabIndex = 8;
+            lblListaEmpresasCadastradas.TabIndex = 6;
             lblListaEmpresasCadastradas.Text = "Empresas cadastradas";
             lblListaEmpresasCadastradas.Click += lblListaEmpresasCadastradas_Click;
             // 
@@ -144,7 +144,7 @@ namespace TalentHubBR.UI.TelasSistema
             txtEmail.Location = new Point(12, 89);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(402, 23);
-            txtEmail.TabIndex = 10;
+            txtEmail.TabIndex = 5;
             // 
             // label1
             // 
@@ -154,7 +154,7 @@ namespace TalentHubBR.UI.TelasSistema
             label1.Location = new Point(12, 67);
             label1.Name = "label1";
             label1.Size = new Size(47, 19);
-            label1.TabIndex = 9;
+            label1.TabIndex = 4;
             label1.Text = "Email";
             // 
             // button1

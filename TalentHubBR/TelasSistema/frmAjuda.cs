@@ -19,12 +19,12 @@ namespace TalentHubBR.UI.TelasSistema
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Manual do Usuário");
+            MessageBox.Show("Manual do Usuário - Ainda em desenvolvimento");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Atalhos uteis do sistema");
+            MessageBox.Show("Atalhos uteis do sistema - Ainda em desenvolvimento");
         }
 
         private void button3_Click(object sender, EventArgs e)

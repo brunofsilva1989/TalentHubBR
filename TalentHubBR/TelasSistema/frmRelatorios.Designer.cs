@@ -49,7 +49,7 @@
             lblSelecionado.Location = new Point(515, 25);
             lblSelecionado.Name = "lblSelecionado";
             lblSelecionado.Size = new Size(96, 19);
-            lblSelecionado.TabIndex = 0;
+            lblSelecionado.TabIndex = 2;
             lblSelecionado.Text = "Selecionado:";
             // 
             // lblTipo
@@ -60,7 +60,7 @@
             lblTipo.Location = new Point(6, 25);
             lblTipo.Name = "lblTipo";
             lblTipo.Size = new Size(39, 19);
-            lblTipo.TabIndex = 1;
+            lblTipo.TabIndex = 0;
             lblTipo.Text = "Tipo";
             // 
             // cmbSelecionado
@@ -70,7 +70,7 @@
             cmbSelecionado.Location = new Point(515, 48);
             cmbSelecionado.Name = "cmbSelecionado";
             cmbSelecionado.Size = new Size(500, 27);
-            cmbSelecionado.TabIndex = 2;
+            cmbSelecionado.TabIndex = 3;
             cmbSelecionado.SelectedIndexChanged += cmbSelecionado_SelectedIndexChanged;
             // 
             // cmbTipoRelatorio
@@ -80,7 +80,7 @@
             cmbTipoRelatorio.Location = new Point(6, 48);
             cmbTipoRelatorio.Name = "cmbTipoRelatorio";
             cmbTipoRelatorio.Size = new Size(503, 27);
-            cmbTipoRelatorio.TabIndex = 3;
+            cmbTipoRelatorio.TabIndex = 1;
             cmbTipoRelatorio.Text = "Ex: Rel. Candidato";
             cmbTipoRelatorio.SelectedIndexChanged += cmbTipoRelatorio_SelectedIndexChanged;
             // 
@@ -90,7 +90,7 @@
             btnGerarRelatorio.Location = new Point(1021, 48);
             btnGerarRelatorio.Name = "btnGerarRelatorio";
             btnGerarRelatorio.Size = new Size(61, 46);
-            btnGerarRelatorio.TabIndex = 4;
+            btnGerarRelatorio.TabIndex = 6;
             btnGerarRelatorio.UseVisualStyleBackColor = true;
             btnGerarRelatorio.Click += btnGerarRelatorio_Click;
             // 
@@ -112,7 +112,7 @@
             lblRelatorios.Location = new Point(6, 105);
             lblRelatorios.Name = "lblRelatorios";
             lblRelatorios.Size = new Size(79, 19);
-            lblRelatorios.TabIndex = 6;
+            lblRelatorios.TabIndex = 4;
             lblRelatorios.Text = "Relatorios";
             // 
             // groupBox1

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisualizarDocumentos));
             groupBox1 = new GroupBox();
+            button1 = new Button();
             dgvDocumentos = new DataGridView();
             lblCandidato = new Label();
             btnVerDoc = new Button();
             cmbCandidato = new ComboBox();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocumentos).BeginInit();
             SuspendLayout();
@@ -55,14 +55,26 @@
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.Location = new Point(1047, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(55, 49);
+            button1.TabIndex = 4;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // dgvDocumentos
             // 
+            dgvDocumentos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvDocumentos.BackgroundColor = SystemColors.HighlightText;
             dgvDocumentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDocumentos.Location = new Point(11, 99);
             dgvDocumentos.Name = "dgvDocumentos";
             dgvDocumentos.Size = new Size(1085, 436);
-            dgvDocumentos.TabIndex = 8;
+            dgvDocumentos.TabIndex = 2;
             dgvDocumentos.CellContentClick += dgvDocumentos_CellContentClick;
             // 
             // lblCandidato
@@ -71,7 +83,7 @@
             lblCandidato.Location = new Point(11, 17);
             lblCandidato.Name = "lblCandidato";
             lblCandidato.Size = new Size(166, 19);
-            lblCandidato.TabIndex = 2;
+            lblCandidato.TabIndex = 0;
             lblCandidato.Text = "Selecione o Candidato:";
             // 
             // btnVerDoc
@@ -81,7 +93,7 @@
             btnVerDoc.Location = new Point(200, 22);
             btnVerDoc.Name = "btnVerDoc";
             btnVerDoc.Size = new Size(57, 58);
-            btnVerDoc.TabIndex = 6;
+            btnVerDoc.TabIndex = 3;
             btnVerDoc.UseVisualStyleBackColor = true;
             btnVerDoc.Click += btnVerDoc_Click;
             // 
@@ -92,19 +104,8 @@
             cmbCandidato.Location = new Point(11, 39);
             cmbCandidato.Name = "cmbCandidato";
             cmbCandidato.Size = new Size(183, 27);
-            cmbCandidato.TabIndex = 5;
+            cmbCandidato.TabIndex = 1;
             cmbCandidato.SelectedIndexChanged += cmbCandidato_SelectedIndexChanged;
-            // 
-            // button1
-            // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Center;
-            button1.Location = new Point(1047, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(55, 49);
-            button1.TabIndex = 9;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // frmVisualizarDocumentos
             // 
@@ -113,6 +114,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1115, 565);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmVisualizarDocumentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Visualizar Documentos do Candidato";

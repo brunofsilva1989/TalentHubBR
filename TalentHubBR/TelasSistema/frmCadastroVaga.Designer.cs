@@ -77,7 +77,7 @@
             label2.Location = new Point(397, 15);
             label2.Name = "label2";
             label2.Size = new Size(118, 19);
-            label2.TabIndex = 1;
+            label2.TabIndex = 2;
             label2.Text = "Escopo da Vaga";
             // 
             // label3
@@ -88,7 +88,7 @@
             label3.Location = new Point(6, 68);
             label3.Name = "label3";
             label3.Size = new Size(52, 19);
-            label3.TabIndex = 2;
+            label3.TabIndex = 4;
             label3.Text = "Status";
             // 
             // label4
@@ -99,7 +99,7 @@
             label4.Location = new Point(103, 69);
             label4.Name = "label4";
             label4.Size = new Size(69, 19);
-            label4.TabIndex = 3;
+            label4.TabIndex = 6;
             label4.Text = "Empresa";
             // 
             // txtDescricao
@@ -107,14 +107,14 @@
             txtDescricao.Location = new Point(6, 37);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(385, 23);
-            txtDescricao.TabIndex = 4;
+            txtDescricao.TabIndex = 1;
             // 
             // txtEscopoVaga
             // 
             txtEscopoVaga.Location = new Point(397, 37);
             txtEscopoVaga.Name = "txtEscopoVaga";
             txtEscopoVaga.Size = new Size(720, 23);
-            txtEscopoVaga.TabIndex = 5;
+            txtEscopoVaga.TabIndex = 3;
             // 
             // cmbStatus
             // 
@@ -123,7 +123,7 @@
             cmbStatus.Location = new Point(6, 90);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(91, 23);
-            cmbStatus.TabIndex = 6;
+            cmbStatus.TabIndex = 5;
             // 
             // cmbEmpresa
             // 
@@ -139,7 +139,7 @@
             btnSalvar.Location = new Point(1123, 213);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(58, 55);
-            btnSalvar.TabIndex = 8;
+            btnSalvar.TabIndex = 19;
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
@@ -149,7 +149,7 @@
             btnEditar.Location = new Point(1123, 274);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(58, 55);
-            btnEditar.TabIndex = 9;
+            btnEditar.TabIndex = 20;
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
@@ -159,7 +159,7 @@
             btnExcluir.Location = new Point(1121, 335);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(60, 55);
-            btnExcluir.TabIndex = 10;
+            btnExcluir.TabIndex = 21;
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
@@ -174,7 +174,7 @@
             dgvVagas.Location = new Point(6, 152);
             dgvVagas.Name = "dgvVagas";
             dgvVagas.Size = new Size(1111, 357);
-            dgvVagas.TabIndex = 11;
+            dgvVagas.TabIndex = 17;
             dgvVagas.CellContentClick += dgvVagas_CellContentClick;
             // 
             // lblVagas
@@ -185,7 +185,7 @@
             lblVagas.Location = new Point(6, 130);
             lblVagas.Name = "lblVagas";
             lblVagas.Size = new Size(51, 19);
-            lblVagas.TabIndex = 12;
+            lblVagas.TabIndex = 16;
             lblVagas.Text = "Vagas";
             // 
             // groupBox1
@@ -239,7 +239,7 @@
             btnNovo.Location = new Point(1123, 152);
             btnNovo.Name = "btnNovo";
             btnNovo.Size = new Size(58, 55);
-            btnNovo.TabIndex = 21;
+            btnNovo.TabIndex = 18;
             btnNovo.UseVisualStyleBackColor = true;
             btnNovo.Click += btnNovo_Click;
             // 
@@ -251,7 +251,7 @@
             label7.Location = new Point(854, 69);
             label7.Name = "label7";
             label7.Size = new Size(148, 19);
-            label7.TabIndex = 20;
+            label7.TabIndex = 14;
             label7.Text = "Data expiração vaga";
             // 
             // label6
@@ -262,7 +262,7 @@
             label6.Location = new Point(602, 68);
             label6.Name = "label6";
             label6.Size = new Size(141, 19);
-            label6.TabIndex = 19;
+            label6.TabIndex = 12;
             label6.Text = "Data abertura vaga";
             // 
             // dtpDataExpiracao
@@ -270,14 +270,14 @@
             dtpDataExpiracao.Location = new Point(854, 90);
             dtpDataExpiracao.Name = "dtpDataExpiracao";
             dtpDataExpiracao.Size = new Size(263, 23);
-            dtpDataExpiracao.TabIndex = 18;
+            dtpDataExpiracao.TabIndex = 15;
             // 
             // dtpDataAbertura
             // 
             dtpDataAbertura.Location = new Point(602, 90);
             dtpDataAbertura.Name = "dtpDataAbertura";
             dtpDataAbertura.Size = new Size(246, 23);
-            dtpDataAbertura.TabIndex = 17;
+            dtpDataAbertura.TabIndex = 13;
             // 
             // label5
             // 
@@ -287,7 +287,7 @@
             label5.Location = new Point(480, 68);
             label5.Name = "label5";
             label5.Size = new Size(57, 19);
-            label5.TabIndex = 16;
+            label5.TabIndex = 10;
             label5.Text = "Salario";
             // 
             // label1
@@ -298,7 +298,7 @@
             label1.Location = new Point(297, 68);
             label1.Name = "label1";
             label1.Size = new Size(51, 19);
-            label1.TabIndex = 15;
+            label1.TabIndex = 8;
             label1.Text = "Cargo";
             // 
             // txtSalario
@@ -306,14 +306,14 @@
             txtSalario.Location = new Point(480, 90);
             txtSalario.Name = "txtSalario";
             txtSalario.Size = new Size(116, 23);
-            txtSalario.TabIndex = 14;
+            txtSalario.TabIndex = 11;
             // 
             // txtCargo
             // 
             txtCargo.Location = new Point(297, 90);
             txtCargo.Name = "txtCargo";
             txtCargo.Size = new Size(177, 23);
-            txtCargo.TabIndex = 13;
+            txtCargo.TabIndex = 9;
             // 
             // frmCadastroVaga
             // 

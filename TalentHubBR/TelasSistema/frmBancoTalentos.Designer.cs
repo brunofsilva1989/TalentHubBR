@@ -71,6 +71,7 @@ namespace TalentHubBR.UI.TelasSistema
             // 
             // dgvTalentos
             // 
+            dgvTalentos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvTalentos.BackgroundColor = SystemColors.HighlightText;
             dgvTalentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTalentos.Location = new Point(12, 146);

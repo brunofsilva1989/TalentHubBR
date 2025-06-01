@@ -54,7 +54,7 @@ namespace TalentHubBR.UI.TelasSistema
             lblArquivo.Location = new Point(604, 73);
             lblArquivo.Name = "lblArquivo";
             lblArquivo.Size = new Size(64, 19);
-            lblArquivo.TabIndex = 0;
+            lblArquivo.TabIndex = 6;
             lblArquivo.Text = "Arquivo";
             // 
             // lblTipoDoc
@@ -63,7 +63,7 @@ namespace TalentHubBR.UI.TelasSistema
             lblTipoDoc.Location = new Point(304, 73);
             lblTipoDoc.Name = "lblTipoDoc";
             lblTipoDoc.Size = new Size(76, 19);
-            lblTipoDoc.TabIndex = 1;
+            lblTipoDoc.TabIndex = 4;
             lblTipoDoc.Text = "Tipo Doc.:";
             // 
             // lblCandidato
@@ -72,7 +72,7 @@ namespace TalentHubBR.UI.TelasSistema
             lblCandidato.Location = new Point(6, 19);
             lblCandidato.Name = "lblCandidato";
             lblCandidato.Size = new Size(166, 19);
-            lblCandidato.TabIndex = 2;
+            lblCandidato.TabIndex = 0;
             lblCandidato.Text = "Selecione o Candidato:";
             // 
             // txtArquivo
@@ -80,14 +80,14 @@ namespace TalentHubBR.UI.TelasSistema
             txtArquivo.Location = new Point(604, 95);
             txtArquivo.Name = "txtArquivo";
             txtArquivo.Size = new Size(316, 29);
-            txtArquivo.TabIndex = 3;
+            txtArquivo.TabIndex = 7;
             // 
             // txtTipo
             // 
             txtTipo.Location = new Point(304, 95);
             txtTipo.Name = "txtTipo";
             txtTipo.Size = new Size(294, 29);
-            txtTipo.TabIndex = 4;
+            txtTipo.TabIndex = 5;
             // 
             // cmbCandidato
             // 
@@ -96,7 +96,7 @@ namespace TalentHubBR.UI.TelasSistema
             cmbCandidato.Location = new Point(6, 42);
             cmbCandidato.Name = "cmbCandidato";
             cmbCandidato.Size = new Size(183, 27);
-            cmbCandidato.TabIndex = 5;
+            cmbCandidato.TabIndex = 1;
             cmbCandidato.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btnUpload
@@ -106,7 +106,7 @@ namespace TalentHubBR.UI.TelasSistema
             btnUpload.Location = new Point(994, 80);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(48, 54);
-            btnUpload.TabIndex = 6;
+            btnUpload.TabIndex = 10;
             btnUpload.UseVisualStyleBackColor = true;
             btnUpload.Click += btnUpload_Click;
             // 
@@ -117,12 +117,13 @@ namespace TalentHubBR.UI.TelasSistema
             btnSelecionarArquivo.Location = new Point(937, 80);
             btnSelecionarArquivo.Name = "btnSelecionarArquivo";
             btnSelecionarArquivo.Size = new Size(51, 55);
-            btnSelecionarArquivo.TabIndex = 7;
+            btnSelecionarArquivo.TabIndex = 9;
             btnSelecionarArquivo.UseVisualStyleBackColor = true;
             btnSelecionarArquivo.Click += btnSelecionarArquivo_Click;
             // 
             // dgvDocumentos
             // 
+            dgvDocumentos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvDocumentos.BackgroundColor = SystemColors.HighlightText;
             dgvDocumentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDocumentos.Location = new Point(6, 151);
@@ -165,7 +166,7 @@ namespace TalentHubBR.UI.TelasSistema
             button1.Location = new Point(994, 20);
             button1.Name = "button1";
             button1.Size = new Size(48, 54);
-            button1.TabIndex = 12;
+            button1.TabIndex = 11;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -175,7 +176,7 @@ namespace TalentHubBR.UI.TelasSistema
             lblNomeDoc.Location = new Point(6, 73);
             lblNomeDoc.Name = "lblNomeDoc";
             lblNomeDoc.Size = new Size(83, 19);
-            lblNomeDoc.TabIndex = 11;
+            lblNomeDoc.TabIndex = 2;
             lblNomeDoc.Text = "Nome Doc";
             // 
             // txtNome
@@ -183,7 +184,7 @@ namespace TalentHubBR.UI.TelasSistema
             txtNome.Location = new Point(6, 95);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(292, 29);
-            txtNome.TabIndex = 10;
+            txtNome.TabIndex = 3;
             // 
             // frmUploadDocumentos
             // 

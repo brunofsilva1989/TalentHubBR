@@ -26,6 +26,11 @@ namespace TalentHub.BLL.Services
         #endregion
 
         #region Métodos
+        /// <summary>
+        /// Método para adicionar um novo candidato.
+        /// </summary>
+        /// <param name="candidato"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void AdicionarCandidato(Candidato candidato)
         {
             if (string.IsNullOrEmpty(candidato.Nome))
@@ -35,6 +40,11 @@ namespace TalentHub.BLL.Services
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Método para atualizar as informações de um candidato existente.
+        /// </summary>
+        /// <param name="candidato"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void AtualizarCandidato(Candidato candidato)
         {            
             var candidatoExistente = _context.Candidatos.Find(candidato.Id);
@@ -71,6 +81,11 @@ namespace TalentHub.BLL.Services
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Método para deletar um candidato pelo ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void DeletarCandidato(int id)
         {
             var candidato = _context.Candidatos.Find(id);
@@ -82,6 +97,12 @@ namespace TalentHub.BLL.Services
             _context.SaveChanges();
         }
 
+        /// <summary>
+        /// Método para obter um candidato pelo ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public Candidato ObterCandidatoPorId(int id)
         {
             var candidato = _context.Candidatos.Find(id);
@@ -93,6 +114,10 @@ namespace TalentHub.BLL.Services
             return candidato;
         }
 
+        /// <summary>
+        /// Método para obter todos os candidatos cadastrados.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Candidato> ObterTodosCandidatos()
         {            
             return _context.Candidatos.ToList();            
