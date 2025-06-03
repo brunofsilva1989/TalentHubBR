@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.Web.CodeGeneration.Design;
 using TalentHub.Domain.Entities;
 
 namespace TalentHub.DAL
@@ -108,51 +110,57 @@ namespace TalentHub.DAL
             modelBuilder.Entity<Documento>(builder =>
             {
                 builder.HasKey(d => d.Id);
-                builder.Property(d => d.Nome).IsRequired().HasMaxLength(150); // Define o nome como obrigatório e com tamanho máximo
-                builder.Property(d => d.Tipo).HasMaxLength(50); // Define o tipo com tamanho máximo
-                builder.Property(d => d.Conteudo).IsRequired(); // Define o conteúdo como obrigatório
+                builder.Property(d => d.Nome).IsRequired().HasMaxLength(150); 
+                builder.Property(d => d.Tipo).HasMaxLength(50); 
+                builder.Property(d => d.Conteudo).IsRequired(); 
             });
 
             //Configuração da entidade Relatorio
             modelBuilder.Entity<Relatorio>(builder =>
             {
                 builder.HasKey(r => r.Id);
-                builder.Property(r => r.NomeRelatorio).IsRequired().HasMaxLength(150); // Define o nome do relatório como obrigatório e com tamanho máximo
-                builder.Property(r => r.TipoRelatorio).HasMaxLength(50); // Define o tipo de relatório com tamanho máximo
-                builder.Property(r => r.Descricao).HasMaxLength(500); // Define a descrição com tamanho máximo
-                builder.Property(r => r.Conteudo).IsRequired(); // Define o conteúdo como obrigatório
+                builder.Property(r => r.NomeRelatorio).IsRequired().HasMaxLength(150); 
+                builder.Property(r => r.TipoRelatorio).HasMaxLength(50); 
+                builder.Property(r => r.Descricao).HasMaxLength(500); 
+                builder.Property(r => r.Conteudo).IsRequired(); 
 
                 builder.HasOne(r => r.Candidato)
                     .WithMany(c => c.Relatorios)
-                    .HasForeignKey(r => r.CandidatoId); // Define a relação entre Relatório e Candidato
+                    .HasForeignKey(r => r.CandidatoId); 
 
                 builder.HasOne(r => r.Vaga)
                     .WithMany(v => v.Relatorios)
-                    .HasForeignKey(r => r.VagaId); // Define a relação entre Relatório e Vaga
+                    .HasForeignKey(r => r.VagaId); 
             });
 
             //Configuração da entidade Feedback
             modelBuilder.Entity<Feedback>(builder =>
             {
                 builder.HasKey(f => f.Id);
-                builder.Property(f => f.Comentario).IsRequired().HasMaxLength(500); // Define o comentário como obrigatório e com tamanho máximo
-                builder.Property(f => f.DataFeedback).IsRequired(); // Define a data do feedback como obrigatória
+                builder.Property(f => f.Comentario).IsRequired().HasMaxLength(500); 
+                builder.Property(f => f.DataFeedback).IsRequired(); 
                 builder.HasOne(f => f.Candidato)
                     .WithMany(c => c.Feedbacks)
-                    .HasForeignKey(f => f.CandidatoId); // Define a relação entre Feedback e Candidato
+                    .HasForeignKey(f => f.CandidatoId); 
                 builder.HasOne(f => f.Vaga)
                     .WithMany(v => v.Feedbacks)
-                    .HasForeignKey(f => f.VagaId); // Define a relação entre Feedback e Vaga
+                    .HasForeignKey(f => f.VagaId); 
             });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            if (!optionsBuilder.IsConfigured)
+            {
+                // Busca do appsettings.json do projeto UI
+                IConfiguration configuration = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) 
+                    .AddJsonFile("appsettings.json") 
+                    .Build();
 
-            if(!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=DEVBRUNO;Database=TalentHubDB;User Id=sa;Password=Bru@1989;TrustServerCertificate=True;");
-
-
+                string connectionString = configuration.GetConnectionString("MinhaConexao");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
         }
     }
         

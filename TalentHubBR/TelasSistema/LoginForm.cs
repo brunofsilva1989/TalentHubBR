@@ -38,7 +38,7 @@ namespace TalentHubBR.UI.TelasSistema
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (username == "admin" && password == "admin")
+            if (username == "Ana Paula" && password == "Ana123")
             {
                 CustomMessageBox.Show("Login bem-sucedido!");
                 this.DialogResult = DialogResult.OK; // Define o resultado do diálogo como OK

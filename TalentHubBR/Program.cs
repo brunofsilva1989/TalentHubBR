@@ -1,18 +1,23 @@
-using TalentHubBR.UI;
+﻿using TalentHubBR.UI;
 using TalentHubBR.UI.TelasSistema;
+using Microsoft.Extensions.Configuration;
 
 namespace TalentHubBR
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static IConfiguration Configuration { get; private set; }
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // 🔧 Configuração
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            Configuration = builder.Build();
+
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
         }
